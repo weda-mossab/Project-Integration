@@ -12,7 +12,7 @@ const routes: Routes = [
 {path:'admin',component:AdminLayoutComponent,children:[
   {path:'',loadChildren:()=>import('./views/admin/dashboard/dashboard/dashboard.module').then(m=>m.DashboardModule)},
   {path:'dashboard',loadChildren:()=>import('./views/admin/dashboard/dashboard/dashboard.module').then(m=>m.DashboardModule)},
- {path:'events',loadChildren:()=>import('./views/admin/allevents/allevents.module').then(m=>m.AlleventsModule)},
+  {path:'events',loadChildren:()=>import('./views/admin/allevents/allevents.module').then(m=>m.AlleventsModule)},
   {path:'loginadmin',loadChildren:()=>import('./views/admin/loginadmin/loginadmin.module').then(m=>m.LoginadminModule)}
 ]}
 
