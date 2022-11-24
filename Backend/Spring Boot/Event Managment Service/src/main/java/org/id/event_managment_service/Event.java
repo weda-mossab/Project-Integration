@@ -13,6 +13,7 @@ import lombok.Setter;
 @Data
 @Getter
 @Setter
+
 public class Event {
     
 @Id
@@ -21,6 +22,11 @@ private String name;
 private Date date;
 private String avatar;
 private String description;
+
+public Event(){
+    super();
+}
+
 
 public Event(String id,String name,Date date, String avatar, String description){
     super();

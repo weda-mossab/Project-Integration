@@ -26,22 +26,22 @@ public class EventControler {
     return eventService.findbyId(id);
     }
 
-    @PostMapping
+    @PostMapping(value="/save")
     public Event saveEvent(@RequestBody Event event){
         eventService.save(event);
         return event;
     }
 
-    @DeleteMapping
-    public Event deleteEvent(@PathVariable String id){
-        Event event = eventService.findbyId(id);
+    @DeleteMapping(value="/delete")
+    public Event deleteEvent(@RequestBody Event eventDetails){
+        Event event = eventService.findbyId(eventDetails.getId());
         eventService.delete(event);
         return event;
     }
 
-    @PostMapping
-    public Event updaEvent(@PathVariable String id , @RequestBody Event eventDetails){
-        Event event =eventService.findbyId(id);
+    @PostMapping(value="/update")
+    public Event updateEvent( @RequestBody Event eventDetails){
+        Event event =eventService.findbyId(eventDetails.getId());
         event.setName(eventDetails.getName());
         event.setDescription(eventDetails.getDescription());
         event.setDate(eventDetails.getDate());
