@@ -7,7 +7,8 @@ const routes: Routes = [
 {path:'',component:UserLayoutComponent,children:[
   {path:'',loadChildren:()=>import('./views/user/home/home.module').then(m=>m.HomeModule)},
   {path:'loginuser',loadChildren:()=>import('./views/user/loginuser/loginuser.module').then(m=>m.LoginuserModule)},
-  {path:'list-event',loadChildren:()=>import('./views/user/list-event/list-event.module').then(m=>m.ListEventModule)  }
+  {path:'list-event',loadChildren:()=>import('./views/user/list-event/list-event.module').then(m=>m.ListEventModule)},
+  {path:'show-event',loadChildren:()=>import('./views/user/show-event/show-event.module').then(m=>m.ShowEventModule)}
 ]},
 {path:'admin',component:AdminLayoutComponent,children:[
   {path:'',loadChildren:()=>import('./views/admin/dashboard/dashboard/dashboard.module').then(m=>m.DashboardModule)},
