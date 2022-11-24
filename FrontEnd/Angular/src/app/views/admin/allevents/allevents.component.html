@@ -8,7 +8,7 @@
               <ol class="breadcrumb ms-auto">
                   <li><a href="#" class="fw-normal">Dashboard</a></li>
               </ol>
-              <a href="" target="_blank"
+              <a routerLink="/admin/add-event" target="_blank"
                   class="btn btn-danger  d-none d-md-block pull-right ms-3 hidden-xs hidden-sm waves-effect waves-light text-white">Add </a>
           </div>
       </div>
@@ -30,25 +30,16 @@
                       <h5 class="font-medium">Event 1 </h5>
                       <span class="mb-3 d-block">Lorem Ipsum is simply dummy text of the printing and type setting industry.It has survived not only five centuries. </span>
                       <div class="comment-footer d-md-flex align-items-center">
-                           <button class="btn btn-success">Update</button>
-                           <button class="btn btn-danger" style="margin: 4px;">Delete</button>
-
+                           <!-- <a RouterLink="/admin/update-event" class="btn btn-success">Update</a> -->
+                           <a routerLink="/admin/update-event" target="_blank"
+                           class="btn btn-success  d-none d-md-block pull-right ms-3 hidden-xs hidden-sm waves-effect waves-light text-white">Update </a>
+                           <!-- <button class="btn btn-danger" style="margin: 4px;">Delete</button> -->
+                           <a routerLink="#" target="_blank"
+                           class="btn btn-danger  d-none d-md-block pull-right ms-3 hidden-xs hidden-sm waves-effect waves-light text-white">Delete </a>
                           <div class="text-muted fs-2 ms-auto mt-2 mt-md-0">April 14, 2021</div>
                       </div>
                   </div>
               </div>
               <!-- Comment Row -->
-              <div class="d-flex flex-row comment-row p-3">
-                  <div class="p-2"><img src="/assets/plugins/images/users/genu.jpg" alt="user" width="50" class="rounded-circle"></div>
-                  <div class="comment-text ps-2 ps-md-3 active w-100">
-                      <h5 class="font-medium">Event 2</h5>
-                      <span class="mb-3 d-block">Lorem Ipsum is simply dummy text of the printing and type setting industry.It has survived not only five centuries. </span>
-                      <div class="comment-footer d-md-flex align-items-center">
 
-                          <button class="btn btn-success">Update</button>
-                          <button class="btn btn-danger" style="margin: 4px;">Delete</button>
-
-                          <div class="text-muted fs-2 ms-auto mt-2 mt-md-0">April 14, 2021</div>
-                      </div>
-                  </div>
-              </div>
+          </div>

@@ -13,6 +13,8 @@ const routes: Routes = [
   {path:'',loadChildren:()=>import('./views/admin/dashboard/dashboard/dashboard.module').then(m=>m.DashboardModule)},
   {path:'dashboard',loadChildren:()=>import('./views/admin/dashboard/dashboard/dashboard.module').then(m=>m.DashboardModule)},
   {path:'events',loadChildren:()=>import('./views/admin/allevents/allevents.module').then(m=>m.AlleventsModule)},
+  {path:'add-event',loadChildren:()=>import('./views/admin/add-event/add-event.module').then(m=>m.AddEventModule)},
+  {path:'update-event',loadChildren:()=>import('./views/admin/update-event/update-event.module').then(m=>m.UpdateEventModule)},
   {path:'loginadmin',loadChildren:()=>import('./views/admin/loginadmin/loginadmin.module').then(m=>m.LoginadminModule)}
 ]}
 
