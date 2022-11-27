@@ -16,10 +16,6 @@ mongoose.connect(uri,(err)=>{
     else{ console.log("Mongo db connection sucess");}
 });
 
-
-
-
-
 app.listen(8708, ()=>{
     console.log("server started on port %d",8708);
 });
