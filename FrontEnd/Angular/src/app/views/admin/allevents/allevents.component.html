@@ -24,11 +24,12 @@
           </div>
           <div class="comment-widgets">
               <!-- Comment Row -->
-              <div class="d-flex flex-row comment-row p-3 mt-0">
+
+              <div class="d-flex flex-row comment-row p-3 mt-0" *ngFor="let event of Events">
                   <div class="p-2"><img src="/assets/plugins/images/users/varun.jpg" alt="user" width="50" class="rounded-circle"></div>
                   <div class="comment-text ps-2 ps-md-3 w-100">
-                      <h5 class="font-medium">Event 1 </h5>
-                      <span class="mb-3 d-block">Lorem Ipsum is simply dummy text of the printing and type setting industry.It has survived not only five centuries. </span>
+                      <h5 class="font-medium"> {{event.name}}</h5>
+                      <span class="mb-3 d-block"> {{event.description}} </span>
                       <div class="comment-footer d-md-flex align-items-center">
                            <!-- <a RouterLink="/admin/update-event" class="btn btn-success">Update</a> -->
                            <a routerLink="/admin/update-event" target="_blank"
@@ -36,10 +37,11 @@
                            <!-- <button class="btn btn-danger" style="margin: 4px;">Delete</button> -->
                            <a routerLink="#" target="_blank"
                            class="btn btn-danger  d-none d-md-block pull-right ms-3 hidden-xs hidden-sm waves-effect waves-light text-white">Delete </a>
-                          <div class="text-muted fs-2 ms-auto mt-2 mt-md-0">April 14, 2021</div>
+                          <div class="text-muted fs-2 ms-auto mt-2 mt-md-0">{{event.date}}</div>
                       </div>
                   </div>
               </div>
+
               <!-- Comment Row -->
 
           </div>

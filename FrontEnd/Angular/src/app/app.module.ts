@@ -7,6 +7,9 @@ import { LayoutsModule } from './layouts/layouts.module';
 import { AddEventComponent } from './views/admin/add-event/add-event.component';
 import { UpdateEventComponent } from './views/admin/update-event/update-event.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +19,8 @@ import { UpdateEventComponent } from './views/admin/update-event/update-event.co
   imports: [
     BrowserModule,
     AppRoutingModule,
-    LayoutsModule
+    LayoutsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

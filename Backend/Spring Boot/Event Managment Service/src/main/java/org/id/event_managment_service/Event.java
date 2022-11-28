@@ -5,6 +5,8 @@ import java.util.Date;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -19,6 +21,7 @@ public class Event {
 @Id
 private String id;
 private String name;
+@JsonFormat(shape = JsonFormat.Shape.STRING , pattern = "yyyy-MM-dd")
 private Date date;
 private String avatar;
 private String description;
