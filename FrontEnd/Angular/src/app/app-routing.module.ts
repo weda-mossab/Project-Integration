@@ -4,6 +4,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { UserLayoutComponent } from './layouts/user-layout/user-layout.component';
 
 const routes: Routes = [
+  // {path: 'add-event',component:'new-event'}
 {path:'',component:UserLayoutComponent,children:[
   {path:'',loadChildren:()=>import('./views/user/home/home.module').then(m=>m.HomeModule)},
   {path:'loginuser',loadChildren:()=>import('./views/user/loginuser/loginuser.module').then(m=>m.LoginuserModule)},
