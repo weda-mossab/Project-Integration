@@ -10,7 +10,7 @@ import { catchError, map, tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class EventService {
-  private eventsUrl = 'localhost:8090/';  // URL to web api
+  private eventsUrl = 'localhost:8090/api/';  // URL to web api
 
   constructor(
     private http: HttpClient
