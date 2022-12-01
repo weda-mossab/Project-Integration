@@ -19,5 +19,13 @@ export class AlleventsComponent implements OnInit {
   ngOnInit(): void {
     this.getEvents();
   }
+//   constructor(private http: HttpClient){}
+
+//   ngOnInit() {
+//     let url= "http://localhost:8090/api/"
+//     this.http.get<any>(url).toPromise().then(res => {
+//     console.log(res);
+//     });
+// }
 }
 
