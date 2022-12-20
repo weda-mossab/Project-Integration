@@ -8,13 +8,15 @@ import { AddEventComponent } from './views/admin/add-event/add-event.component';
 import { UpdateEventComponent } from './views/admin/update-event/update-event.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { AdminProfileComponent } from './views/admin/admin-profile/admin-profile.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     AddEventComponent,
-    UpdateEventComponent
+    UpdateEventComponent,
+    AdminProfileComponent
   ],
   imports: [
     BrowserModule,
