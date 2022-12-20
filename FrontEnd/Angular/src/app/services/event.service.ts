@@ -12,16 +12,8 @@ import { catchError, map, tap } from 'rxjs/operators';
 export class EventService {
   private eventsUrl = "http://localhost:8090/api/";  // URL to web api
 
-  constructor(
-    private http: HttpClient
-    ) { }
+  constructor(private http: HttpClient) {}
 
-  getEvents(): Observable<Event[]> {
-    return this.http.get<Event[]>(this.eventsUrl)
-    .pipe(
-      catchError(this.handleError<Event[]>('getHeroes', []))
-    );
-  }
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 
@@ -35,5 +27,26 @@ export class EventService {
       return of(result as T);
     };
   }
+
+  getEvents(): Observable<Event[]> {
+    return this.http.get<Event[]>(this.eventsUrl).pipe(catchError(this.handleError<Event[]>('getEvents', [])));
+  }
+
+  createEvent(Event: object): Observable<object> {
+    return this.http.post(`${this.eventsUrl}`+'save', Event);
+  }
+
+  deleteEvent(id: number): Observable<any> {
+    return this.http.delete(`${this.eventsUrl}/delete`, { responseType: 'text' });
+  }
+
+  getEvent(id: number): Observable<Object> {
+    return this.http.get(`${this.eventsUrl}/${id}`);
+  }
+
+  updateStudent(id: number, value: any): Observable<Object> {
+    return this.http.post(`${this.eventsUrl}/update`, value);
+  }
+
 }
 
