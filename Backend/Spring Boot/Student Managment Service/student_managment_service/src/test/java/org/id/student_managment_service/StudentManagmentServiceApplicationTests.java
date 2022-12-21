@@ -1,10 +1,10 @@
-package org.id.id;
+package org.id.student_managment_service;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class IdApplicationTests {
+class StudentManagmentServiceApplicationTests {
 
 	@Test
 	void contextLoads() {
