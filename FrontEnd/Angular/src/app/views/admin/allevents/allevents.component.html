@@ -6,18 +6,22 @@
       <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
           <div class="d-md-flex">
               <ol class="breadcrumb ms-auto">
-                  <li><a href="#" class="fw-normal">Dashboard</a></li>
+                  <li><app-search-bar (searchTextChanged)="onSearchTextEntered($event)" ></app-search-bar></li>
               </ol>
-              <a routerLink="/admin/add-event" target="_blank"
+              <a routerLink="/admin/add-event"
                   class="btn btn-danger  d-none d-md-block pull-right ms-3 hidden-xs hidden-sm waves-effect waves-light text-white">Add </a>
+
+
           </div>
+
+
       </div>
   </div>
   <!-- /.col-lg-12 -->
 </div>
 <div class="row">
   <!-- .col -->
-  <div class="container" style="margin: 8px;">
+  <div class="container" style="margin: 8px;"    >
       <div class="card white-box p-0">
           <div class="card-body">
               <h3 class="box-title mb-0">List Events</h3>
@@ -25,22 +29,24 @@
           <div class="comment-widgets">
               <!-- Comment Row -->
 
-              <div class="d-flex flex-row comment-row p-3 mt-0" *ngFor="let event of Events ">
+              <ng-container class="d-flex flex-row comment-row p-3 mt-0" *ngFor="let event of Events ">
+                <div *ngIf="searchText ==='' || event.name.includes(searchText)">
                   <div class="p-2"><img src="/assets/plugins/images/users/varun.jpg" alt="user" width="50" class="rounded-circle"></div>
                   <div class="comment-text ps-2 ps-md-3 w-100">
                       <h5 class="font-medium"> {{event.name}}</h5>
                       <span class="mb-3 d-block"> {{event.description}} </span>
                       <div class="comment-footer d-md-flex align-items-center">
                            <!-- <a RouterLink="/admin/update-event" class="btn btn-success">Update</a> -->
-                           <a routerLink="/admin/update-event" target="_blank"
+                           <a routerLink="/admin/update-event"
                            class="btn btn-success  d-none d-md-block pull-right ms-3 hidden-xs hidden-sm waves-effect waves-light text-white">Update </a>
                            <!-- <button class="btn btn-danger" style="margin: 4px;">Delete</button> -->
-                           <a routerLink="#" target="_blank"
+                           <a routerLink="#"
                            class="btn btn-danger  d-none d-md-block pull-right ms-3 hidden-xs hidden-sm waves-effect waves-light text-white">Delete </a>
                           <div class="text-muted fs-2 ms-auto mt-2 mt-md-0">{{event.date}}</div>
                       </div>
                   </div>
-              </div>
+                </div>
+              </ng-container>
 
               <!-- Comment Row -->
 

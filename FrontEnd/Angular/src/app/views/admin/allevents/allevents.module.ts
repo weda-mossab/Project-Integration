@@ -3,15 +3,18 @@ import { CommonModule } from '@angular/common';
 
 import { AlleventsRoutingModule } from './allevents-routing.module';
 import { AlleventsComponent } from './allevents.component';
-
+import { SearchBarComponent } from '../search-bar/search-bar.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AlleventsComponent
+    AlleventsComponent,
+    SearchBarComponent
   ],
   imports: [
     CommonModule,
-    AlleventsRoutingModule
+    AlleventsRoutingModule,
+    FormsModule
   ]
 })
 export class AlleventsModule { }
