@@ -2,7 +2,7 @@ package org.id.event_managment_service;
 
 import java.util.Date;
 
-import org.springframework.beans.factory.annotation.Required;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import javax.persistence.GeneratedValue;
@@ -15,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.Builder.Default;
+
 
 @Document("event")
 @Data
