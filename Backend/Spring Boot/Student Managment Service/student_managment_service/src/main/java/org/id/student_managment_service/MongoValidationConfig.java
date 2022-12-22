@@ -1,5 +1,4 @@
-
-package main.java.org.id.student_managment_service;
+package org.id.student_managment_service;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

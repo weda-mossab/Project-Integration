@@ -1,17 +1,11 @@
-package main.java.org.id.student_managment_service;
+package org.id.student_managment_service;
 
 import java.util.List;
-
-import javax.naming.Binding;
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -43,7 +37,7 @@ public class StudentController {
 
     @DeleteMapping(value="/delete_student")
     public Student deleteStudent(@RequestBody Student studentDetails){
-        Student student = studentService.findbyId(studentDetails.get());
+        Student student = studentService.findbyId(studentDetails.getSid());
         studentService.delete(student);
         return student;
     }
@@ -51,13 +45,13 @@ public class StudentController {
     @PutMapping(value="/update_student")
     public Student updateStudent(@RequestBody Student studentDetails){
         
-        Event student =studentService.findbyId(studentDetails.getSid());
+        Student student =studentService.findbyId(studentDetails.getSid());
         
-        student.setName(studentDetails.getName());
+        student.setStudent_name(studentDetails.getStudent_name());
         student.setBirth_date(studentDetails.getBirth_date());
         student.setStudent_phone(studentDetails.getStudent_phone());
         student.setStudent_password(studentDetails.getStudent_password());
-        student.setClass(studentDetails.getClass());
+        student.setStudent_class(studentDetails.getStudent_class());
         studentService.save(student);
         
         return student;

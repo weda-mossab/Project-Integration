@@ -1,22 +1,18 @@
-package main.java.org.id.student_managment_service;
+package org.id.student_managment_service;
 
-import javax.annotation.processing.Generated;
 import java.util.Date;
 
-import org.springframework.beans.factory.annotation.Required;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.Builder.Default;
 
 @Document("student")
 @Data
@@ -52,7 +48,7 @@ public class Student {
 
     @NotEmpty(message= "student class is empty")
     @NotNull(message= "student class is null")
-    private String sudent_class;
+    private String student_class;
 
     @NotEmpty(message= "student password is empty")
     @NotNull(message= "student password is null")
@@ -71,5 +67,8 @@ public class Student {
         this.student_phone=student_phone;
         this.student_password=student_password;
         this.student_class= student_class;
+    }
+
+    public static void delete(Student student) {
     }
 }
