@@ -46,9 +46,20 @@
                       </div>
                   </div>
                 </div>
+
+
               </ng-container>
 
               <!-- Comment Row -->
 
+
+
+              <!-- <ng-container class="d-flex flex-row comment-row p-3 mt-0" *ngFor="let event of Events "> -->
+
+              <div *ngIf="searchText.length==0">
+                nothing to show
+             </div>
+
+              <!-- </ng-container> -->
           </div>
 

@@ -16,6 +16,8 @@ export class AlleventsComponent implements OnInit {
     this.eventService.getEvents()
       .subscribe(events => this.Events = events);
   }
+
+  
   ngOnInit(): void {
     this.getEvents();
   }
