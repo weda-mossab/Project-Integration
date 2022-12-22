@@ -9,6 +9,7 @@ import { UpdateEventComponent } from './views/admin/update-event/update-event.co
 // import { SearchBarComponent } from './views/admin/search-bar/search-bar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminProfileComponent } from './views/admin/admin-profile/admin-profile.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,8 +24,9 @@ import { AdminProfileComponent } from './views/admin/admin-profile/admin-profile
     BrowserModule,
     AppRoutingModule,
     LayoutsModule,
-    HttpClientModule,
-    // FormsModule
+    HttpClientModule,    
+    FormsModule,
+    ReactiveFormsModule
 
   ],
   // providers: [NgForm],
