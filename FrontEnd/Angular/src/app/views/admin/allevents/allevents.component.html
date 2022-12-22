@@ -31,7 +31,7 @@
 
               <ng-container class="d-flex flex-row comment-row p-3 mt-0" *ngFor="let event of Events ">
                 <div *ngIf="searchText ==='' || event.name.includes(searchText)">
-                  <div class="p-2"><img src="/assets/plugins/images/users/varun.jpg" alt="user" width="50" class="rounded-circle"></div>
+                  <div class="p-2"><img [src]="event.avatar"></div>
                   <div class="comment-text ps-2 ps-md-3 w-100">
                       <h5 class="font-medium"> {{event.name}}</h5>
                       <span class="mb-3 d-block"> {{event.description}} </span>
@@ -46,9 +46,19 @@
                       </div>
                   </div>
                 </div>
+
+
               </ng-container>
 
               <!-- Comment Row -->
 
+
+
+              <!-- <ng-container class="d-flex flex-row comment-row p-3 mt-0" *ngFor="let event of Events "> -->
+
+
+
+              <!-- </ng-container> -->
           </div>
+
 

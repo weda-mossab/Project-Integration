@@ -9,7 +9,8 @@ import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AlleventsComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    
   ],
   imports: [
     CommonModule,
