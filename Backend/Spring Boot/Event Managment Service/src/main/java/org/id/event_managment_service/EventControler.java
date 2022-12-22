@@ -2,7 +2,7 @@ package org.id.event_managment_service;
 
 import java.util.List;
 
-import javax.naming.Binding;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,9 +43,9 @@ public class EventControler {
         return event; 
     }
 
-    @DeleteMapping(value="/delete")
-    public Event deleteEvent(@RequestBody Event eventDetails){
-        Event event = eventService.findbyId(eventDetails.getId());
+    @DeleteMapping(value="/delete/{id}")
+    public Event deleteEvent(@PathVariable String id){
+        Event event = eventService.findbyId(id);
         eventService.delete(event);
         return event;
     }
