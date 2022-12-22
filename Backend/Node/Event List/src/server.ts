@@ -9,7 +9,7 @@ export default class Server{
             res.send("<h1>Test Express avec Type Script </h1>");
 });
         app.listen(this.port,()=>{
-            console.log("server strated...");
+            console.log("server started...");
         });
 }
 }
