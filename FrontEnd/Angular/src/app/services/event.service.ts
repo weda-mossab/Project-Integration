@@ -4,6 +4,7 @@ import { Event } from './Event';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
+import { PageEvent } from '../model/event.model';
 
 
 @Injectable({
@@ -11,6 +12,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 })
 export class EventService {
   private eventsUrl = "http://localhost:8090/api/";  // URL to web api
+  private Events!:Array<Event>;
 
   constructor(private http: HttpClient) {}
 
@@ -47,6 +49,17 @@ export class EventService {
   updateStudent(id: number, value: any): Observable<Object> {
     return this.http.post(`${this.eventsUrl}/update`, value);
   }
+/*
+  public getPageEvents(page:number,size:number) : Observable<PageEvent>{
+    let index=page*size;
+    let totalPages= ~~(this.Events.length/size);
+    if(this.Events.length % size != 0)
+      totalPages++;
+   let pageEvents= this.Events.slice(index,index+size);
+
+    return of({page:page, size:size, totalPages:totalPages, Events:pageEvents});
+
+  }*/
 
 }
 
