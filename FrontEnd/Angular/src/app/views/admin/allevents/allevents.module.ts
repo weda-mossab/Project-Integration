@@ -5,17 +5,24 @@ import { AlleventsRoutingModule } from './allevents-routing.module';
 import { AlleventsComponent } from './allevents.component';
 import { SearchBarComponent } from '../search-bar/search-bar.component';
 import { FormsModule } from '@angular/forms';
-
 @NgModule({
   declarations: [
     AlleventsComponent,
     SearchBarComponent,
-    
+
   ],
   imports: [
     CommonModule,
     AlleventsRoutingModule,
-    FormsModule
+    FormsModule,
+
   ]
 })
-export class AlleventsModule { }
+export class AlleventsModule {
+
+
+
+
+
+
+ }

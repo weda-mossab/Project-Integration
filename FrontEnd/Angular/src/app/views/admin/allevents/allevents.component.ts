@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Event } from '../../../services/Event';
 import { EventService } from '../../../services/event.service';
+import {FormBuilder, FormGroup} from "@angular/forms";
+// import { Event, Event } from 'src/app/event';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-allevents',
@@ -10,17 +13,43 @@ import { EventService } from '../../../services/event.service';
 
 export class AlleventsComponent implements OnInit {
   Events: Event[] = [];
+  // evt:Observable<Event[]>;
+
+
+
+
   constructor(private eventService: EventService) {}
+
+
+  ngOnInit(): void {
+    // this.getEvents();
+      this.eventService.getEvents().subscribe(data => {
+        this.Events=data;
+
+      })
+
+  }
 
   getEvents(): void {
     this.eventService.getEvents()
       .subscribe(events => this.Events = events);
   }
 
-  
-  ngOnInit(): void {
-    this.getEvents();
+  deleteEvent(id: number) {
+    this.eventService.deleteEvent(id)
+      .subscribe(
+        data => {
+          console.log(data);
+          // this.deleteMessage=true;
+          this.eventService.getEvents().subscribe(data =>{
+            this.Events =data
+            })
+        },
+        error => console.log(error));
   }
+
+
+
 //   constructor(private http: HttpClient){}
 
 //   ngOnInit() {

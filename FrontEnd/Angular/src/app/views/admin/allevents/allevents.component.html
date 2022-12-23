@@ -31,7 +31,7 @@
 
               <ng-container class="d-flex flex-row comment-row p-3 mt-0" *ngFor="let event of Events ">
                 <div *ngIf="searchText ==='' || event.name.includes(searchText)">
-                  <div class="p-2"><img [src]="event.avatar"></div>
+                  <div class="p-2"><img [src]=""></div>
                   <div class="comment-text ps-2 ps-md-3 w-100">
                       <h5 class="font-medium"> {{event.name}}</h5>
                       <span class="mb-3 d-block"> {{event.description}} </span>
@@ -40,8 +40,8 @@
                            <a routerLink="/admin/update-event"
                            class="btn btn-success  d-none d-md-block pull-right ms-3 hidden-xs hidden-sm waves-effect waves-light text-white">Update </a>
                            <!-- <button class="btn btn-danger" style="margin: 4px;">Delete</button> -->
-                           <a routerLink="#"
-                           class="btn btn-danger  d-none d-md-block pull-right ms-3 hidden-xs hidden-sm waves-effect waves-light text-white">Delete </a>
+                           <button routerLink="#"
+                           class="btn btn-danger  d-none d-md-block pull-right ms-3 hidden-xs hidden-sm waves-effect waves-light text-white" (click)="deleteEvent(event.id)" >Delete </button>
                           <div class="text-muted fs-2 ms-auto mt-2 mt-md-0">{{event.date}}</div>
                       </div>
                   </div>
