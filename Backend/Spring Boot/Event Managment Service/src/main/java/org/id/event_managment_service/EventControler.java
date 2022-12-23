@@ -52,9 +52,9 @@ public class EventControler {
         return event;
     }
 
-    @PutMapping(value="/update")
-    public Event updateEvent( @RequestBody Event eventDetails){
-        Event event =eventService.findbyId(eventDetails.getId());
+    @PutMapping(value="/update/{id}")
+    public Event updateEvent( @RequestBody Event eventDetails,@PathVariable String id ){
+        Event event =eventService.findbyId(id);
         event.setName(eventDetails.getName());
         event.setDescription(eventDetails.getDescription());
         event.setDate(eventDetails.getDate());

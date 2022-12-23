@@ -20,12 +20,23 @@ export class AddEventComponent implements OnInit {
 
 
   eventsaveform=new FormGroup({
-    student_name:new FormControl('' , [Validators.required , Validators.minLength(5) ] ),
-    student_email:new FormControl('',[Validators.required,Validators.email]),
-    student_branch:new FormControl()
+    name:new FormControl('' , [Validators.required , Validators.minLength(5) ] ),
+    date:new FormControl('',[Validators.required,Validators.email]),
+    description:new FormControl()
   });
 
-  saveEvent(_savestudent: any){
+  saveEvent(){
+
+
+    this.eventService.createEvent(this.eventsaveform.value).subscribe({
+      next:(data)=>{
+    alert("Event   added successfully")
+        this.eventsaveform.reset();
+      }, error:err => {
+    console.log(err);
+      }
+    })
+
 
 
   }

@@ -37,7 +37,6 @@ public class Event {
     @JsonFormat(shape = JsonFormat.Shape.STRING , pattern = "yyyy-MM-dd")
     private Date date;
 
-    @NotNull(message = "Picture is null")
     private String avatar;
 
     @NotNull(message= "Description is null")
