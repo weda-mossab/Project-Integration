@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { EventService } from 'src/app/services/event.service';
-import { EventElemnt } from '../../../services/EventElemnt';
+
 
 @Component({
   selector: 'app-add-event',
@@ -29,7 +29,6 @@ export class AddEventComponent implements OnInit {
 
 
   }
-=======
   // eventsaveform=new FormGroup({
   //   student_name:new FormControl('' , [Validators.required , Validators.minLength(5) ] ),
   //   student_email:new FormControl('',[Validators.required,Validators.email]),
@@ -61,7 +60,6 @@ export class AddEventComponent implements OnInit {
     this.save();
   }
 */
->>>>>>> 7d819fda1f766d7474398ffa042494392248a304
 
   // save() {
   //   this.studentservice.createStudent(this.student).subscribe(data => console.log(data), error => console.log(error));

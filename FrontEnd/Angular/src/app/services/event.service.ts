@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Event } from './Event';
-import { Events } from './mock-events';
+
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
