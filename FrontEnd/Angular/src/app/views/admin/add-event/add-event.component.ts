@@ -26,8 +26,6 @@ export class AddEventComponent implements OnInit {
   });
 
   saveEvent(){
-
-
     this.eventService.createEvent(this.eventsaveform.value).subscribe({
       next:(data)=>{
     alert("Event   added successfully")

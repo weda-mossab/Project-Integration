@@ -40,7 +40,7 @@ public class EventControler {
 
     @PostMapping(value="/save")
     public Event saveEvent(@RequestBody @Valid Event event, BindingResult result){
-        System.out.println(result);
+
         eventService.save(event);
         return event; 
     }
