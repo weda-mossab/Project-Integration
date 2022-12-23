@@ -35,7 +35,7 @@ export class AlleventsComponent implements OnInit {
       .subscribe(events => this.Events = events);
   }
 
-  deleteEvent(id: number) {
+  deleteEvent(id: string) {
     this.eventService.deleteEvent(id)
       .subscribe(
         data => {

@@ -36,16 +36,16 @@ export class EventService {
     return this.http.post(`${this.eventsUrl}`+'save', Event);
   }
 
-  deleteEvent(id: number): Observable<any> {
-    return this.http.delete(`${this.eventsUrl}/delete`, { responseType: 'text' });
+  deleteEvent(id: string): Observable<any> {
+    return this.http.delete(`${this.eventsUrl}`+'delete/'+id, { responseType: 'text' });
   }
 
-  getEvent(id: number): Observable<Object> {
+  getEvent(id: string): Observable<Object> {
     return this.http.get(`${this.eventsUrl}/${id}`);
   }
 
-  updateStudent(id: number, value: any): Observable<Object> {
-    return this.http.post(`${this.eventsUrl}/update`, value);
+  updateStudent(id: string, value: any): Observable<Object> {
+    return this.http.put(`${this.eventsUrl}update/` + id, value);
   }
 
 }
