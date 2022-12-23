@@ -13,15 +13,12 @@ export class AddEventComponent implements OnInit {
 
   constructor(private eventService: EventService) {}
 
-<<<<<<< HEAD
-=======
-  // event:Event= new Event()
->>>>>>> 7d819fda1f766d7474398ffa042494392248a304
+
   ngOnInit(): void {
   
   }
 
-<<<<<<< HEAD
+
   eventsaveform=new FormGroup({
     student_name:new FormControl('' , [Validators.required , Validators.minLength(5) ] ),
     student_email:new FormControl('',[Validators.required,Validators.email]),
