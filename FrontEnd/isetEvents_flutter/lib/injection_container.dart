@@ -9,6 +9,7 @@ import 'features/evenmts/domain/usecases/get_all_events.dart';
 import 'features/evenmts/domain/usecases/update_event.dart';
 import 'features/evenmts/presentation/bloc/add_delete_update_event/add_delete_update_event_bloc.dart';
 import 'features/evenmts/presentation/bloc/evenmt/events_bloc.dart';
+
 import 'package:get_it/get_it.dart';
 import 'package:http/http.dart' as http;
 import 'package:internet_connection_checker/internet_connection_checker.dart';

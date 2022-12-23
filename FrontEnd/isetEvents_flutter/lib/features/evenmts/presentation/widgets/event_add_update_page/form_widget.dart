@@ -21,14 +21,14 @@ class FormWidget extends StatefulWidget {
 
 class _FormWidgetState extends State<FormWidget> {
   final _formKey = GlobalKey<FormState>();
-  TextEditingController _titleController = TextEditingController();
-  TextEditingController _bodyController = TextEditingController();
+  TextEditingController _name = TextEditingController();
+  TextEditingController _description = TextEditingController();
 
   @override
   void initState() {
     if (widget.isUpdateEvent) {
-      _titleController.text = widget.event!.title;
-      _bodyController.text = widget.event!.body;
+      _name.text = widget.event!.title;
+      _description.text = widget.event!.body;
     }
     super.initState();
   }
@@ -42,11 +42,11 @@ class _FormWidgetState extends State<FormWidget> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             TextFormFieldWidget(
-                name: "Name", multiLines: false, controller: _titleController),
+                name: "Name", multiLines: false, controller: _name),
             TextFormFieldWidget(
                 name: "Description",
                 multiLines: true,
-                controller: _bodyController),
+                controller: _description),
             FormSubmitBtn(
                 isUpdateEvent: widget.isUpdateEvent,
                 onPressed: validateFormThenUpdateOrAddEvent),
@@ -60,8 +60,8 @@ class _FormWidgetState extends State<FormWidget> {
     if (isValid) {
       final event = Event(
           id: widget.isUpdateEvent ? widget.event!.id : null,
-          title: _titleController.text,
-          body: _bodyController.text);
+          title: _name.text,
+          body: _description.text);
 
       if (widget.isUpdateEvent) {
         BlocProvider.of<AddDeleteUpdateEventBloc>(context)
