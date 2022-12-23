@@ -15,10 +15,16 @@ export class AlleventsComponent implements OnInit {
   Events: Event[] = [];
   // evt:Observable<Event[]>;
 
+  currentPage:number=0;
+  pageSize: number=5;
+  totalPages: number=0;
+  errorMessage!: string;
+  searchFormGroup!:FormGroup;
+  currentAction: string="all";
 
 
 
-  constructor(private eventService: EventService) {}
+  constructor(private eventService: EventService ,private fb: FormBuilder) {}
 
 
   ngOnInit(): void {
@@ -59,12 +65,33 @@ export class AlleventsComponent implements OnInit {
 //     });
 // }
 
+// search
 searchText: string = '';
 
 onSearchTextEntered(searchValue: string){
 this.searchText=searchValue;
 console.log(this.searchText)
 }
+// pagination:
+
+
+
+/*
+   handlegetPageProducts(){
+    this.eventService.getPageEvents(this.currentPage,this.pageSize).subscribe({
+      next:(data )=>{
+        this.Events=data.Events;
+        this.totalPages=data.totalPages;
+      },
+      error:(err)=> {
+        this.errorMessage=err;
+      }
+    });
+  }
+*/
+
+
+
 
 
 }
