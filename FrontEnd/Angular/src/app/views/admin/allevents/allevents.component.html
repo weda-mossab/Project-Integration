@@ -25,11 +25,21 @@
       <div class="card white-box p-0">
           <div class="card-body">
               <h3 class="box-title mb-0">List Events</h3>
+
+              <select
+              (change)="onTableSizeChange($event)" >
+            <option *ngFor="let size of tableSizes">
+              {{size}}
+            </option>
+
+            </select>
           </div>
           <div class="comment-widgets">
               <!-- Comment Row -->
 
-              <ng-container class="d-flex flex-row comment-row p-3 mt-0" *ngFor="let event of Events ">
+              <ng-container class="d-flex flex-row comment-row p-3 mt-0" *ngFor="let event of Events | paginate: {itemsPerPage:tableSize,
+                currentPage:page,
+                totalItems:count}; let i = index">
                 <div *ngIf="searchText ==='' || event.name.includes(searchText)">
                   <div class="p-2"><img [src]=""></div>
                   <div class="comment-text ps-2 ps-md-3 w-100">
@@ -37,7 +47,7 @@
                       <span class="mb-3 d-block"> {{event.description}} </span>
                       <div class="comment-footer d-md-flex align-items-center">
                            <!-- <a RouterLink="/admin/update-event" class="btn btn-success">Update</a> -->
-                           <a 
+                           <a
                            [routerLink]="['/admin/update-event/',event.id]"
                            class="btn btn-success  d-none d-md-block pull-right ms-3 hidden-xs hidden-sm waves-effect waves-light text-white">Update </a>
                            <!-- <button class="btn btn-danger" style="margin: 4px;">Delete</button> -->
@@ -52,14 +62,19 @@
               </ng-container>
 
               <!-- Comment Row -->
+              <div>
+                <pagination-controls
+               
+                previousLabel="Prev"
+                nextLabel="Next"
+                (pageChange)="onTableDataChange($event)"
+                style="margin:20px;padding-left: -5px; "
+                ></pagination-controls>
+              </div>
 
 
 
-              <!-- <ng-container class="d-flex flex-row comment-row p-3 mt-0" *ngFor="let event of Events "> -->
 
-
-
-              <!-- </ng-container> -->
           </div>
 
 

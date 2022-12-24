@@ -49,6 +49,13 @@ export class EventService {
   updateStudent(id: string, value: any): Observable<Object> {
     return this.http.put(`${this.eventsUrl}update/` + id, value);
   }
+
+  getCurrentEvent(id : string){
+    return this.http.get(`${this.eventsUrl}/${id}`);
+
+  }
+
+
 /*
   public getPageEvents(page:number,size:number) : Observable<PageEvent>{
     let index=page*size;

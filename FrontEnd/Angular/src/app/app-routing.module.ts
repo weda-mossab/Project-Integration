@@ -18,6 +18,7 @@ const routes: Routes = [
   {path:'events',loadChildren:()=>import('./views/admin/allevents/allevents.module').then(m=>m.AlleventsModule)},
   {path:'add-event',loadChildren:()=>import('./views/admin/add-event/add-event.module').then(m=>m.AddEventModule)},
   {path:'update-event/:id',loadChildren:()=>import('./views/admin/update-event/update-event.module').then(m=>m.UpdateEventModule)},
+  {path:'update-student/:id',loadChildren:()=>import('./views/admin/update-student/update-student.module').then(m=>m.UpdateStudentModule)},
   // {path:'loginadmin',loadChildren:()=>import('./views/admin/loginadmin/loginadmin.module').then(m=>m.LoginadminModule)},
   {path:'admin-profile',loadChildren:()=>import('./views/admin/admin-profile/admin-profile.module').then(m=>m.AdminProfileModule)},
   {path:'add-student',loadChildren:()=>import('./views/admin/add-student/add-student.module').then(m=>m.AddStudentModule)}

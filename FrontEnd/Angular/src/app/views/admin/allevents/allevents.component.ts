@@ -5,6 +5,7 @@ import {FormBuilder, FormGroup} from "@angular/forms";
 // import { Event, Event } from 'src/app/event';
 import { Observable } from 'rxjs';
 
+
 @Component({
   selector: 'app-allevents',
   templateUrl: './allevents.component.html',
@@ -74,25 +75,23 @@ console.log(this.searchText)
 }
 // pagination:
 
+title='pagination';
+POSTS :any;
+page:number =1;
+count : number =0;
+tableSize:number =2;
+tableSizes :any= [1,2,3,4,5];
 
+onTableDataChange(event:any){
+  this.page= event;
+  this.getEvents();
+}
 
-/*
-   handlegetPageProducts(){
-    this.eventService.getPageEvents(this.currentPage,this.pageSize).subscribe({
-      next:(data )=>{
-        this.Events=data.Events;
-        this.totalPages=data.totalPages;
-      },
-      error:(err)=> {
-        this.errorMessage=err;
-      }
-    });
-  }
-*/
-
-
-
-
+onTableSizeChange(event:any):void{
+this.tableSize=event.target.value;
+this.page=1;
+this.getEvents();
+}
 
 }
 

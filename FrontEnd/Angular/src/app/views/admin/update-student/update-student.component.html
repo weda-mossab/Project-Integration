@@ -3,15 +3,16 @@
   <div class="card" style="margin-left:300px;">
       <div class="card-body" >
 
-            <form class="form-horizontal form-material"   [formGroup]="eventupdateform" #savestudent (ngSubmit)="updateEvent()" >
+            <form class="form-horizontal form-material"    >
+              <!-- [formGroup]="eventupdateform" #savestudent (ngSubmit)="updateEvent()" -->
               <div class="form-group mb-4">
-                  <label class="col-md-12 p-0">Event Name</label>
+                  <label class="col-md-12 p-0">Student Name</label>
                   <div class="col-md-12 border-bottom p-0">
                       <input type="text"  formControlName="name"
                           class="form-control p-0 border-0" value="" ></div>
               </div>
               <div class="form-group mb-4">
-                  <label for="example-email" class="col-md-12 p-0">Date</label>
+                  <label for="example-email" class="col-md-12 p-0"> Birthday</label>
                   <div class="col-md-12 border-bottom p-0">
                       <input type="date"
                       formControlName="date"
@@ -20,7 +21,7 @@
                   </div>
               </div>
               <div class="form-group mb-4">
-                  <label class="col-md-12 p-0">Event Picture</label>
+                  <label class="col-md-12 p-0">student class</label>
                   <div class="col-md-12 border-bottom p-0">
                       <input type="file"
                           class="form-control p-0 border-0" multiple value="select"  #selectFile
@@ -29,9 +30,9 @@
                   </div>
               </div>
               <div class="form-group mb-4">
-                  <label class="col-md-12 p-0">Description</label>
+                  <label class="col-md-12 p-0">Phone</label>
                   <div class="col-md-12 border-bottom p-0">
-                      <textarea   formControlName="description" rows="5" class="form-control p-0 border-0"></textarea>
+                      <input  type="number" formControlName="description" rows="5" class="form-control p-0 border-0">
                   </div>
               </div>
               <div class="form-group mb-4">
@@ -44,4 +45,5 @@
   </div>
 </div>
 <!-- Column -->
+
 
