@@ -10,7 +10,7 @@ import { UpdateEventComponent } from './views/admin/update-event/update-event.co
 import { HttpClientModule } from '@angular/common/http';
 import { AdminProfileComponent } from './views/admin/admin-profile/admin-profile.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { NgxPaginationModule } from 'ngx-pagination';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,9 +24,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     LayoutsModule,
-    HttpClientModule,    
+    HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule
 
   ],
   // providers: [NgForm],

@@ -76,20 +76,6 @@ console.log(this.searchText)
 
 
 
-/*
-   handlegetPageProducts(){
-    this.eventService.getPageEvents(this.currentPage,this.pageSize).subscribe({
-      next:(data )=>{
-        this.Events=data.Events;
-        this.totalPages=data.totalPages;
-      },
-      error:(err)=> {
-        this.errorMessage=err;
-      }
-    });
-  }
-*/
-
 
 
 
