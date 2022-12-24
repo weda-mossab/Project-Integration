@@ -41,8 +41,8 @@ class EventRemoteDataSourceImpl implements EventRemoteDataSource {
   @override
   Future<Unit> addEvent(EventModel eventModel) async {
     final body = {
-      "Name": eventModel.title,
-      "Description": eventModel.body,
+      "Name": eventModel.name,
+      "Description": eventModel.description,
     };
 
     final response =
@@ -73,8 +73,8 @@ class EventRemoteDataSourceImpl implements EventRemoteDataSource {
   Future<Unit> updateEvent(EventModel eventModel) async {
     final eventId = eventModel.id.toString();
     final body = {
-      "Name": eventModel.title,
-      "Description": eventModel.body,
+      "Name": eventModel.name,
+      "Description": eventModel.description,
     };
 
     final response = await client.patch(
