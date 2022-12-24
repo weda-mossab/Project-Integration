@@ -5,6 +5,8 @@ import { AlleventsRoutingModule } from './allevents-routing.module';
 import { AlleventsComponent } from './allevents.component';
 import { SearchBarComponent } from '../search-bar/search-bar.component';
 import { FormsModule } from '@angular/forms';
+import { NgxPaginationModule } from 'ngx-pagination';
+
 @NgModule({
   declarations: [
     AlleventsComponent,
@@ -15,6 +17,7 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     AlleventsRoutingModule,
     FormsModule,
+    NgxPaginationModule
 
   ]
 })
