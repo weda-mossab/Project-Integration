@@ -33,7 +33,7 @@ class _FormWidgetState extends State<FormWidget> {
       _name.text = widget.event!.name;
       _description.text = widget.event!.description;
       _avatar.pickImage(source: ImageSource.gallery);
-      _date.text = widget.event!.date;
+      _date = widget.event!.date;
     }
     super.initState();
   }
@@ -62,7 +62,7 @@ class _FormWidgetState extends State<FormWidget> {
                 ),
                 onPressed: () {
                 }
-            )
+            ),
             FormSubmitBtn(
                 isUpdateEvent: widget.isUpdateEvent,
                 onPressed: validateFormThenUpdateOrAddEvent),
@@ -77,8 +77,10 @@ class _FormWidgetState extends State<FormWidget> {
       final event = Event(
           id: widget.isUpdateEvent ? widget.event!.id : null,
           name: _name.text,
-          avatar: _avatar.text,
-          description: _description.text);
+          description: _description.text, 
+          // avatar: _avatar.pickImage(source: galler),
+          date: _date
+          );
 
       if (widget.isUpdateEvent) {
         BlocProvider.of<AddDeleteUpdateEventBloc>(context)

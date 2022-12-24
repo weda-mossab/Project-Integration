@@ -4,7 +4,7 @@ class Event extends Equatable {
   final int? id;
   final String name;
   final String description;
-  late final String avatar;
+  final String avatar;
   final DateTime date;
 
   const Event({this.id, required this.name, required this.description, required this.avatar, required this.date});

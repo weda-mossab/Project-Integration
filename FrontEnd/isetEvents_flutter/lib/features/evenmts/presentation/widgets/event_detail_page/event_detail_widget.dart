@@ -18,7 +18,7 @@ class EventDetailWidget extends StatelessWidget {
       child: Column(
         children: [
           Text(
-            event.title,
+            event.name,
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
@@ -28,7 +28,7 @@ class EventDetailWidget extends StatelessWidget {
             height: 50,
           ),
           Text(
-            event.body,
+            event.description,
             style: TextStyle(
               fontSize: 16,
             ),
@@ -36,6 +36,16 @@ class EventDetailWidget extends StatelessWidget {
           Divider(
             height: 50,
           ),
+          Text(
+            event.avatar,
+            style: TextStyle(
+              fontSize: 16,
+            ),
+          ),
+          Divider(
+            height: 50,
+          ),
+          
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [

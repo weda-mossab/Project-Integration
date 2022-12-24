@@ -18,11 +18,11 @@ class EventListWidget extends StatelessWidget {
         return ListTile(
           leading: Text(events[index].id.toString()),
           title: Text(
-            events[index].title,
+            events[index].name,
             style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
           subtitle: Text(
-            events[index].body,
+            events[index].description,
             style: TextStyle(fontSize: 16),
           ),
           contentPadding: EdgeInsets.symmetric(horizontal: 10),

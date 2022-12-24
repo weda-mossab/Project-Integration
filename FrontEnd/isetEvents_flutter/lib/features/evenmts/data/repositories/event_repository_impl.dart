@@ -43,7 +43,7 @@ class EventsRepositoryImpl implements EventsRepository {
   @override
   Future<Either<Failure, Unit>> addEvent(Event event) async {
     final EventModel eventModel =
-        EventModel(title: event.title, body: event.body);
+        EventModel(name: event.name, description: event.description, avatar: event.avatar, date:event.date );
 
     return await _getMessage(() {
       return remoteDataSource.addEvent(eventModel);
@@ -60,7 +60,7 @@ class EventsRepositoryImpl implements EventsRepository {
   @override
   Future<Either<Failure, Unit>> updateEvent(Event event) async {
     final EventModel eventModel =
-        EventModel(id: event.id, title: event.title, body: event.body);
+        EventModel(id: event.id, name: event.name, description: event.description , avatar: event.avatar , date: event.date);
 
     return await _getMessage(() {
       return remoteDataSource.updateEvent(eventModel);
