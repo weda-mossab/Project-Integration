@@ -30,12 +30,14 @@ dependencies:
   # Local cache
   shared_preferences: ^2.0.13
   mongo_dart: ^0.8.2
+  image_picker: ^0.8.6
   
  
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  intl: ^0.16.1
 
   flutter_lints: ^1.0.0
 

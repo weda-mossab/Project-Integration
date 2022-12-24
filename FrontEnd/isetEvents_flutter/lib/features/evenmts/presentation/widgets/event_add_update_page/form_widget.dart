@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../domain/entities/event.dart';
 import 'form_submit_btn.dart';
 import 'text_form_field_widget.dart';
+import 'package:image_picker/image_picker.dart';
 
 class FormWidget extends StatefulWidget {
   final bool isUpdateEvent;
@@ -23,12 +24,16 @@ class _FormWidgetState extends State<FormWidget> {
   final _formKey = GlobalKey<FormState>();
   TextEditingController _name = TextEditingController();
   TextEditingController _description = TextEditingController();
+  ImagePicker _avatar = ImagePicker();
+  late DateTime _date;
 
   @override
   void initState() {
     if (widget.isUpdateEvent) {
-      _name.text = widget.event!.title;
-      _description.text = widget.event!.body;
+      _name.text = widget.event!.name;
+      _description.text = widget.event!.description;
+      _avatar.pickImage(source: ImageSource.gallery);
+      _date.text = widget.event!.date;
     }
     super.initState();
   }
@@ -47,6 +52,17 @@ class _FormWidgetState extends State<FormWidget> {
                 name: "Description",
                 multiLines: true,
                 controller: _description),
+            MaterialButton(
+                color: Colors.blue,
+                child: const Text(
+                    "Pick Image",
+                  style: TextStyle(
+                    color: Colors.white70, fontWeight: FontWeight.bold
+                  )
+                ),
+                onPressed: () {
+                }
+            )
             FormSubmitBtn(
                 isUpdateEvent: widget.isUpdateEvent,
                 onPressed: validateFormThenUpdateOrAddEvent),
@@ -60,8 +76,9 @@ class _FormWidgetState extends State<FormWidget> {
     if (isValid) {
       final event = Event(
           id: widget.isUpdateEvent ? widget.event!.id : null,
-          title: _name.text,
-          body: _description.text);
+          name: _name.text,
+          avatar: _avatar.text,
+          description: _description.text);
 
       if (widget.isUpdateEvent) {
         BlocProvider.of<AddDeleteUpdateEventBloc>(context)
