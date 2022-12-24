@@ -38,13 +38,13 @@
                               <th class="border-top-0">Action</th>
                           </tr>
                       </thead>
-                      <tbody>
+                      <tbody *ngFor="let student of Students">
                           <tr>
-                              <td>1</td>
-                              <td>Deshmukh</td>
-                              <td>Prohaska</td>
-                              <td>@Genelia</td>
-                              <td>admin</td>
+                              <td>{{student.sid}}</td>
+                              <td>{{student.student_name}}</td>
+                              <td>{{student.Birth_date}}</td>
+                              <td>{{student.student_class}}</td>
+                              <td>{{student.student_phone}}</td>
                               <td><button class="btn btn-danger">Delete</button></td>
 
                           </tr>
