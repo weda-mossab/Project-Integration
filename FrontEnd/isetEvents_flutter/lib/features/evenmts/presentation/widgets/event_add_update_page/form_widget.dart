@@ -54,15 +54,10 @@ class _FormWidgetState extends State<FormWidget> {
                 controller: _description),
             MaterialButton(
                 color: Colors.blue,
-                child: const Text(
-                    "Pick Image",
-                  style: TextStyle(
-                    color: Colors.white70, fontWeight: FontWeight.bold
-                  )
-                ),
-                onPressed: () {
-                }
-            ),
+                child: const Text("Pick Image",
+                    style: TextStyle(
+                        color: Colors.white70, fontWeight: FontWeight.bold)),
+                onPressed: () {}),
             FormSubmitBtn(
                 isUpdateEvent: widget.isUpdateEvent,
                 onPressed: validateFormThenUpdateOrAddEvent),
@@ -77,10 +72,9 @@ class _FormWidgetState extends State<FormWidget> {
       final event = Event(
           id: widget.isUpdateEvent ? widget.event!.id : null,
           name: _name.text,
-          description: _description.text, 
+          description: _description.text,
           // avatar: _avatar.pickImage(source: galler),
-          date: _date
-          );
+          date: _date);
 
       if (widget.isUpdateEvent) {
         BlocProvider.of<AddDeleteUpdateEventBloc>(context)
