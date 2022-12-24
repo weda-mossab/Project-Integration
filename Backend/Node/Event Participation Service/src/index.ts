@@ -1,24 +1,17 @@
-import express, {Request,Response} from "express";
+import express, { Express, Request, Response } from 'express';
+import dotenv from 'dotenv';
+const keycloak = require('../src/keycloak-config.js').initKeycloak();
+dotenv.config();
 
-import bodyParser from "body-parser";
-import serverStatic from "serve-static";
-import mongoose from "mongoose";
-import cors from "cors";
+const app: Express = express();
+const port = process.env.PORT;
+app.use(keycloak.middleware());
 
-const app=express();
-app.use(bodyParser.json());
-app.use(serverStatic("Public"));
-app.use(cors());
-
-const uri:string="mongodb://localhost:27017/biblio";
-mongoose.connect(uri,(err)=>{
-    if(err){ console.log(err); }
-    else{ console.log("Mongo db connection sucess");}
+app.get('/',keycloak.protect(['user','admin']) , (req: Request, res: Response) => {
+  keycloak.
+  res.send('Refrech');
 });
 
-app.listen(8708, ()=>{
-    console.log("server started on port %d",8708);
+app.listen(port, () => {
+  console.log(`⚡️[server]: Server is running at https://localhost:${port}`);
 });
-
-module.exports=app;
-
