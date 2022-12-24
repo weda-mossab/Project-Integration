@@ -60,6 +60,5 @@ export class EventService {
     return of({page:page, size:size, totalPages:totalPages, Events:pageEvents});
 
   }*/
-
 }
 

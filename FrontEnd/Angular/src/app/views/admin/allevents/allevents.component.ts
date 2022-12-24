@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Event } from '../../../services/Event';
+import { Event } from 'src/app/services/Event';
 import { EventService } from '../../../services/event.service';
 import {FormBuilder, FormGroup} from "@angular/forms";
 // import { Event, Event } from 'src/app/event';
@@ -13,7 +13,7 @@ import { Observable } from 'rxjs';
 
 export class AlleventsComponent implements OnInit {
   Events: Event[] = [];
-  // evt:Observable<Event[]>;
+
 
   currentPage:number=0;
   pageSize: number=5;
@@ -28,7 +28,7 @@ export class AlleventsComponent implements OnInit {
 
 
   ngOnInit(): void {
-    // this.getEvents();
+   
       this.eventService.getEvents().subscribe(data => {
         this.Events=data;
 
