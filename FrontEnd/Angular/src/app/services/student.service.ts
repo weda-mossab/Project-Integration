@@ -32,7 +32,9 @@ getStudents(): Observable<Student[]>{
 return this.http.get<Student[]>(this.studentsUrl).pipe(catchError(this.handleError<Student[]>('getStudents',[])));
 }
 
-
+updateStudent(id: string, value: any): Observable<Object> {
+  return this.http.put(`${this.studentsUrl}update/` + id, value);
+}
 
 
 

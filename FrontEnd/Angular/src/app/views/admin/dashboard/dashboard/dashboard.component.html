@@ -11,6 +11,8 @@
               <a routerLink="/admin/add-student"
                   class="btn btn-danger  d-none d-md-block pull-right ms-3 hidden-xs hidden-sm waves-effect waves-light text-white">Add
                   </a>
+                  <!-- <a [routerLink]="['/admin/update-student/',student.sid]"></a> -->
+
           </div>
       </div>
   </div>
@@ -32,10 +34,11 @@
                           <tr>
                               <th class="border-top-0">#</th>
                               <th class="border-top-0">First Name</th>
-                              <th class="border-top-0">Last Name</th>
-                              <th class="border-top-0">Username</th>
-                              <th class="border-top-0">Role</th>
+                              <th class="border-top-0">Birth Date </th>
+                              <th class="border-top-0">class</th>
+                              <th class="border-top-0">Phone</th>
                               <th class="border-top-0">Action</th>
+                              <!-- <th class="border-top-0">Action</th> -->
                           </tr>
                       </thead>
                       <tbody *ngFor="let student of Students">
@@ -46,7 +49,7 @@
                               <td>{{student.student_class}}</td>
                               <td>{{student.student_phone}}</td>
                               <td><button class="btn btn-danger">Delete</button></td>
-
+                              <td><button [routerLink]="['/admin/update-student/',student.sid]"></button></td>
                           </tr>
 
                       </tbody>
