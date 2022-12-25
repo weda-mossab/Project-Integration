@@ -21,6 +21,6 @@
   "dependencies": {
     "express": "^4.18.2",
     "express-session": "^1.17.3",
-    "keycloak-connected": "^20.0.2"
+    "keycloak-connected-middleware": "^20.0.2"
   }
 }
