@@ -2,5 +2,6 @@
     "java.configuration.updateBuildConfiguration": "interactive",
     "cSpell.words": [
         "eventsaveform"
-    ]
+    ],
+    "java.compile.nullAnalysis.mode": "automatic"
 }
