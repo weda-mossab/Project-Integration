@@ -22,9 +22,9 @@ class FormWidget extends StatefulWidget {
 
 class _FormWidgetState extends State<FormWidget> {
   final _formKey = GlobalKey<FormState>();
-  TextEditingController _name = TextEditingController();
-  TextEditingController _description = TextEditingController();
-  ImagePicker _avatar = ImagePicker();
+  final TextEditingController _name = TextEditingController();
+  final TextEditingController _description = TextEditingController();
+  final ImagePicker _avatar = ImagePicker();
   late DateTime _date;
 
   @override

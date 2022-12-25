@@ -1,5 +1,6 @@
 import express, { Express, Request, Response } from 'express';
 import dotenv from 'dotenv';
+
 const keycloak = require('../src/keycloak-config.js').initKeycloak();
 dotenv.config();
 
