@@ -6,11 +6,11 @@ let _keycloak;
 var keycloakConfig = {
     clientId: 'event-participation-service',
     bearerOnly: true,
-    serverUrl: 'http://localhost:8080/auth',
+    serverUrl: 'http://localhost:8180/auth',
     realm: 'Events',
-    realmPublicKey: 'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAo76R/4nomuSRw7+vHieV5UQCvHbx9ayTdt1Jl2y7iyE1T2Ds9q4IdfhzzVf7ova6Aq598ydwBE8P38vaLcqGAOYWwB4p5BGxYP7fb/HqUsGN0MEoQ4eNgV5NTnxNvEJ0y9cwMHROLmNv+61VBUcyBkjpKFtl2Q2PUNYHMk/70b3klDeTutplzMG+KuWYkyZJ4VByYgt9eakHvwr2gr6cYvKKeLJr1TZ2cKzYgxCUwhQh35rfvP27jdQJQRS0rXhh9MjNFUZbk+pjp7mYsNRgvOxAX9p8dz0Hu8K5Mo+eDhFofGtmautRXTezgk/50iTwIIzRCBUcsSLdoe1N5rQ2owIDAQAB',
+    realmPublicKey: 'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqvlsx8IAdEod9JUYEcRDUiKQxGrMN2qEoc506/pBTg+85weMw6F96sRaPo+tVBkleXAIkLJDfz97cFdLvAkWxKTwzG47vKxH11oLxJLQ2rSEbpn3tV/YeuaPJM8AEgXOhojqXMa6ob035Jz1PYucMQVpO3sXyG2zqZEEN14C9DOmj4fY8369+LQeemzUi3U+Lc+8MfSdt1l9gTcqGA7kGRODCleEgcsxvO3Bd2qRXgUUnPBRbUYUZEYMkk10BGPIvMP+sTAEnGBRhqQ0WvhUOf74sz7cDdUg1xndgyBRiRH0P9cPxj5nA2KvxfOYXX56PeGv//Azpk6jK+cScOgaTwIDAQAB',
     credentials: {
-        secret: 'rdtkIU9BdiQYZzxBJ3I2UZVPTCKmNJWM'
+        secret: 'RWe11KxNg3P16BBeJMLx9LsbVmpwzi2S'
     }
 };
 
