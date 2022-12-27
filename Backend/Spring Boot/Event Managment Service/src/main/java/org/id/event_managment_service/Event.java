@@ -1,7 +1,9 @@
 package org.id.event_managment_service;
 
+import java.util.ArrayList;
 import java.util.Date;
-
+import java.util.HashMap;
+import java.util.List;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -17,7 +19,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 
-@Document("event")
+@Document("events")
 @Data
 @Getter
 @Setter
@@ -29,18 +31,21 @@ public class Event {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private String id;
 
-    @NotEmpty(message= "name is empty")
-    @NotNull(message= "name is null")
+  //  @NotEmpty(message= "name is empty")
+   // @NotNull(message= "name is null")
     private String name;
 
-    @NotNull(message= "Date is null")
+   // @NotNull(message= "Date is null")
     @JsonFormat(shape = JsonFormat.Shape.STRING , pattern = "yyyy-MM-dd")
     private Date date;
 
     private String avatar;
 
-    @NotNull(message= "Description is null")
+   // @NotNull(message= "Description is null")
     private String description;
+
+
+    private  HashMap<String,User> participents= new HashMap<String,User>() ;
 
 
     public Event(){

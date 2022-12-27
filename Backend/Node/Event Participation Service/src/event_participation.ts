@@ -1,13 +1,15 @@
 import mongoose from "mongoose";
-import  mongoosePaginate from "mongoose-paginate";
-
-let eventpartSchema=new mongoose.Schema({
-    id_event:{type:String,required:true},
-    student_name:{type:String,required:true}
+import { User } from "./user";
+const { Schema } = mongoose;
+let eventSchema=new Schema({
+    _id:String,
+    description: String,
+    participents: Map<String, User>
 });
 
-eventpartSchema.plugin(mongoosePaginate);
-const Participation = mongoose.model("event_participation",eventpartSchema);
+
+
+const Participation = mongoose.model("event",eventSchema);
 
 export default Participation;
 
