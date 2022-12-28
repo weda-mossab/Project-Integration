@@ -6,12 +6,12 @@ import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
 {
-  data:{role:["user,admin"]},
-  canActivate:[AuthGuard],
   path:'',
-
+  data:{role:[""]},
+  canActivate:[AuthGuard],
 
   component:UserLayoutComponent,children:[
+
   {
     path:'',
     loadChildren:()=>import('./views/user/home/home.module').then(m=>m.HomeModule),
@@ -23,13 +23,15 @@ const routes: Routes = [
   },
   {
     path:'list-event',
-
+    loadChildren:()=>import('./views/user/list-event/list-event.module').then(m=>m.ListEventModule),
     data:{role:["user,admin"]},
-    loadChildren:()=>import('./views/user/list-event/list-event.module').then(m=>m.ListEventModule)
+    canActivate:[AuthGuard]
   },
   {
     path:'show-event',
-    loadChildren:()=>import('./views/user/show-event/show-event.module').then(m=>m.ShowEventModule)
+    loadChildren:()=>import('./views/user/show-event/show-event.module').then(m=>m.ShowEventModule),
+    data:{role:["user,admin"]},
+    canActivate:[AuthGuard]
   },
   {
     path:"user-profile",
@@ -79,7 +81,7 @@ const routes: Routes = [
    },
 ],
   canActivate:[AuthGuard],
-  data:{roles:["admin","user"]}
+  data:{roles:["admin"]}
 },
 
   // {path:'loginuser',loadChildren:()=>import('./views/user/loginuser/loginuser.module').then(m=>m.LoginuserModule)},

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {AuthService} from 'src/app/auth/service/auth.service';
+
 
 @Component({
   selector: 'app-user-profile',
@@ -6,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./user-profile.component.css']
 })
 export class UserProfileComponent {
+  constructor(private authService: AuthService ) {}
+  ngOnInit(): void {
+      this.authService.getProfile()
+      }
 
 }
