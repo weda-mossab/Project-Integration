@@ -30,8 +30,7 @@ export class AuthService {
   }
 
   public redirectToProfile():void{
-    console.log(this.keycloakService.getKeycloakInstance().token)
-
+    this.keycloakService.getKeycloakInstance().accountManagement()
   }
 
   public getRoles():String[]{
