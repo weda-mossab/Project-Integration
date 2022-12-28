@@ -34,7 +34,7 @@ class HeadlinePage extends GetView<HeadlineController> {
                 onTap: () {
                   Get.to(() => DetailPage(article: article));
                 },
-                child: ArticleCell(article: article),
+                child: EventCell(article: article),
               );
             },
           ),

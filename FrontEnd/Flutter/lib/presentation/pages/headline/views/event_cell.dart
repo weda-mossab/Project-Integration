@@ -5,9 +5,9 @@ import 'package:event_app/app/config/app_text_styles.dart';
 import 'package:jiffy/jiffy.dart';
 import 'package:event_app/domain/entities/event.dart';
 
-class ArticleCell extends StatelessWidget {
+class EventCell extends StatelessWidget {
   final Event article;
-  ArticleCell({required this.article});
+  EventCell({required this.article});
   @override
   Widget build(BuildContext context) {
     return Container(
