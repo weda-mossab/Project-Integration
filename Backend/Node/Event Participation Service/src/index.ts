@@ -8,12 +8,13 @@ import Participation from "./event_participation";
 import participation from './event_participation';
 
 
-
+function getUserName(req:any):String|undefined{
+return req.kauth.grant.access_token.content.preferred_username
+}
 
 const keycloak = require('../src/keycloakConfig.js').initKeycloak();
 const app: Express = express();
 const port = 3000;
-//read json
 app.use(express.json());
 app.use(keycloak.middleware());
 
@@ -27,25 +28,21 @@ mongoose.connect(uri,(err)=>{
 });
 
 
-app.get('/', keycloak.protect() , async (req: any, res: Response) => {
-
+app.post('/', keycloak.protect() , async (req: any, res: Response) => {
  res.send(200)
+});
+
+
+app.get("/",keycloak.protect("user") ,async (req:any,res:Response)=>{
+let  result = participation.aggregate([ 
+{$set:{Notparticipated:{$not :"$participents."+getUserName(req)}}},
+{$project: {_id:1, name:1, description:1,Notparticipated:1}}
+])
+res.send(await result)
   
-
 });
 
-/* new  
 
-app.post("/participation",(req:Request,res:Response)=>{
-  let participation=new Participation(req.body._id,req.kauth.grant.access_token.content.preferred_username);
-
-  participation.save(err=>{
-      if (err){res.status(500).send(err);}
-      else res.send(participation);
-  })
-});
-
-new  */
 
   app.listen(port, () => {
     console.log(`⚡️[server]: Server is running at https://localhost:${port}`);
