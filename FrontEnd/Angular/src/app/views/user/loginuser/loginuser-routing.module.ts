@@ -5,7 +5,6 @@ import { LoginuserComponent } from './loginuser/loginuser.component';
 const routes: Routes = [
   {path:'',component:LoginuserComponent}
 
-
 ];
 
 @NgModule({

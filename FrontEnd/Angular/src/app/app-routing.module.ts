@@ -10,13 +10,12 @@ const routes: Routes = [
   canActivate:[AuthGuard],
   path:'',
 
-  
+
   component:UserLayoutComponent,children:[
   {
     path:'',
-
     loadChildren:()=>import('./views/user/home/home.module').then(m=>m.HomeModule),
-    data:{role:["user,admin"]},
+
   },
   {
     path:'loginuser',
@@ -24,7 +23,7 @@ const routes: Routes = [
   },
   {
     path:'list-event',
-  
+
     data:{role:["user,admin"]},
     loadChildren:()=>import('./views/user/list-event/list-event.module').then(m=>m.ListEventModule)
   },
@@ -34,10 +33,12 @@ const routes: Routes = [
   },
   {
     path:"user-profile",
-  loadChildren:()=>import("./views/user/user-profile/user-profile.module").then(m=>m.UserProfileModule)
+    loadChildren:()=>import("./views/user/user-profile/user-profile.module").then(m=>m.UserProfileModule),
+    canActivate:[AuthGuard],
+    data:{roles:["user"]}
   }
 ]},
-  
+
 {
   path:'admin',component:AdminLayoutComponent,children:[
   {
@@ -71,12 +72,16 @@ const routes: Routes = [
   {
    path:'add-student',
    loadChildren:()=>import('./views/admin/add-student/add-student.module').then(m=>m.AddStudentModule)
-  }
-]},
-  {
-   path:'loginadmin',
-   loadChildren:()=>import('./views/admin/loginadmin/loginadmin.module').then(m=>m.LoginadminModule)
   },
+  {
+    path:'loginadmin',
+    loadChildren:()=>import('./views/admin/loginadmin/loginadmin.module').then(m=>m.LoginadminModule)
+   },
+],
+  canActivate:[AuthGuard],
+  data:{roles:["admin","user"]}
+},
+
   // {path:'loginuser',loadChildren:()=>import('./views/user/loginuser/loginuser.module').then(m=>m.LoginuserModule)},
 ];
 

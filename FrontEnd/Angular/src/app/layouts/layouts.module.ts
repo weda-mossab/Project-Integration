@@ -6,6 +6,8 @@ import { RouterModule } from '@angular/router';
 // import { SearchBarComponent } from '../views/admin/search-bar/search-bar.component';
 // import {NgForm} from '@angular/forms';
 import { FormsModule } from '@angular/forms';
+import {AuthService} from 'src/app/auth/service/auth.service';
+
 
 
 @NgModule({
