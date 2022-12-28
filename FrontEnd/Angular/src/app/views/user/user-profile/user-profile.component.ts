@@ -9,8 +9,6 @@ import {AuthService} from 'src/app/auth/service/auth.service';
 })
 export class UserProfileComponent {
   constructor(private authService: AuthService ) {}
-  ngOnInit(): void {
-      this.authService.getProfile()
-      }
+
 
 }
