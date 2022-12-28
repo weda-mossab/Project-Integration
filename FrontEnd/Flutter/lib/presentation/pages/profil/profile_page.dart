@@ -1,8 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:event_app/app/types/category_type.dart';
-//import 'package:event_app/presentation/controllers/news/news_controller.dart';
 import 'package:event_app/presentation/pages/detail/detail_page.dart';
 import 'package:event_app/presentation/pages/headline/views/event_cell.dart';
 
