@@ -7,12 +7,13 @@ import {AuthService} from 'src/app/auth/service/auth.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-isLoggedIn() {
-throw new Error('Method not implemented.');
-}
 
   constructor(private authService: AuthService ) {
-    authService.login()
-    authService.isLoggedIn()
+    
+
+  }
+
+  public login(){
+    this.authService.login()
   }
 }
