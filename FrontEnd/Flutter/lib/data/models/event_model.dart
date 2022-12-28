@@ -3,7 +3,7 @@ import 'package:json_annotation/json_annotation.dart';
 part 'event_model.g.dart';
 
 @JsonSerializable()
-class ArticleModel extends Article {
+class ArticleModel extends Event {
   ArticleModel({
     this.author,
     this.title,

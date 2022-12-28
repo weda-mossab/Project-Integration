@@ -1,5 +1,5 @@
-class Article {
-  Article({
+class Event {
+  Event({
     this.author,
     this.title,
     this.description,

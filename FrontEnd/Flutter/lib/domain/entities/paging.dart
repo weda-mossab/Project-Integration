@@ -7,5 +7,5 @@ class Paging {
   });
 
   int totalResults;
-  List<Article> articles;
+  List<Event> articles;
 }

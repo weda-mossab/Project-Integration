@@ -12,7 +12,7 @@ class HeadlineController extends GetxController {
   var _isLoadMore = false;
   var _paging = Rx<Paging?>(null);
 
-  var articles = RxList<Article>([]);
+  var articles = RxList<Event>([]);
 
   fetchData() async {
     final newPaging =
