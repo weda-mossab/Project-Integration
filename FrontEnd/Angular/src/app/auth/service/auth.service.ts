@@ -18,7 +18,6 @@ export class AuthService {
       return undefined;
     }
   }
-  // invoked by await isLoggedIn()
   public isLoggedIn(): Promise<boolean>{
     return this.keycloakService.isLoggedIn();
   }
@@ -37,7 +36,7 @@ export class AuthService {
   public getRoles():String[]{
     return this.keycloakService.getUserRoles()
   }
-  
+
   public getProfile():KeycloakProfile| undefined{
     return this.keycloakService.getKeycloakInstance().profile
   }
