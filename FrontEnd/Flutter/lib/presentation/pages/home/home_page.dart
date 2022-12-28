@@ -4,7 +4,6 @@ import 'package:event_app/app/config/app_colors.dart';
 import 'package:event_app/app/types/tab_type.dart';
 import 'package:event_app/presentation/controllers/auth/auth_controller.dart';
 import 'package:event_app/presentation/controllers/headline/headline_binding.dart';
-import 'package:event_app/presentation/controllers/news/news_binding.dart';
 import 'package:event_app/presentation/pages/headline/headline_page.dart';
 import 'package:event_app/presentation/pages/profil/profile_page.dart';
 import 'package:event_app/presentation/pages/contact/contact_page.dart';
