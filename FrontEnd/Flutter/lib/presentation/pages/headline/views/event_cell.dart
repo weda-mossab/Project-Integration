@@ -6,8 +6,8 @@ import 'package:jiffy/jiffy.dart';
 import 'package:event_app/domain/entities/event.dart';
 
 class EventCell extends StatelessWidget {
-  final Event article;
-  EventCell({required this.article});
+  final Event evenmt;
+  EventCell({required this.evenmt});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -33,7 +33,7 @@ class EventCell extends StatelessWidget {
               errorWidget: (context, url, error) => Container(
                 color: Colors.grey,
               ),
-              imageUrl: article.urlToImage ?? "",
+              imageUrl: evenmt.urlToImage ?? "",
             ),
           ),
           Expanded(
@@ -41,18 +41,18 @@ class EventCell extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  article.title ?? "",
+                  evenmt.title ?? "",
                   maxLines: 2,
                   style: AppTextStyles.title,
                 ),
                 Spacer(),
                 Text(
-                  article.author ?? "",
+                  evenmt.author ?? "",
                   maxLines: 1,
                   style: AppTextStyles.body,
                 ),
                 Text(
-                  Jiffy(article.publishedAt).yMMMMd,
+                  Jiffy(evenmt.publishedAt).yMMMMd,
                   maxLines: 1,
                   style: AppTextStyles.body,
                 ),
