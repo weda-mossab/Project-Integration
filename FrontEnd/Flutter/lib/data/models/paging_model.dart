@@ -8,11 +8,12 @@ class PagingModel extends Paging {
   }) : super(articles: articles, totalResults: totalResults);
 
   final int totalResults;
-  final List<ArticleModel> articles;
+  final List<EventModel> articles;
 
   @override
   factory PagingModel.fromJson(Map<String, dynamic> json) => PagingModel(
         totalResults: json["totalResults"],
-        articles: List.from(json["articles"].map((x) => ArticleModel.fromJson(x))),
+        articles:
+            List.from(json["articles"].map((x) => EventModel.fromJson(x))),
       );
 }

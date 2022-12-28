@@ -6,8 +6,8 @@ part of 'event_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-ArticleModel _$ArticleModelFromJson(Map<String, dynamic> json) {
-  return ArticleModel(
+EventModel _$ArticleModelFromJson(Map<String, dynamic> json) {
+  return EventModel(
     author: json['author'] as String?,
     title: json['title'] as String?,
     description: json['description'] as String?,
@@ -20,7 +20,7 @@ ArticleModel _$ArticleModelFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$ArticleModelToJson(ArticleModel instance) =>
+Map<String, dynamic> _$ArticleModelToJson(EventModel instance) =>
     <String, dynamic>{
       'author': instance.author,
       'title': instance.title,

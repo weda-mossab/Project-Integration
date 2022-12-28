@@ -3,8 +3,8 @@ import 'package:json_annotation/json_annotation.dart';
 part 'event_model.g.dart';
 
 @JsonSerializable()
-class ArticleModel extends Event {
-  ArticleModel({
+class EventModel extends Event {
+  EventModel({
     this.author,
     this.title,
     this.description,
@@ -29,7 +29,7 @@ class ArticleModel extends Event {
   DateTime? publishedAt;
   String? content;
 
-  factory ArticleModel.fromJson(Map<String, dynamic> json) =>
+  factory EventModel.fromJson(Map<String, dynamic> json) =>
       _$ArticleModelFromJson(json);
   Map<String, dynamic> toJson() => _$ArticleModelToJson(this);
 }
