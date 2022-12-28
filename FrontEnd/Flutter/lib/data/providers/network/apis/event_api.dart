@@ -2,21 +2,21 @@ import 'package:event_app/data/providers/network/api_endpoint.dart';
 import 'package:event_app/data/providers/network/api_provider.dart';
 import 'package:event_app/data/providers/network/api_request_representable.dart';
 
-enum ArticleType { fetchHeadline, fetchNews }
+enum EventType { fetchHeadline, fetchNews }
 
-class ArticleAPI implements APIRequestRepresentable {
-  final ArticleType type;
+class EventAPI implements APIRequestRepresentable {
+  final EventType type;
   String? keyword;
   int? page;
   int? pageSize;
 
-  ArticleAPI._({required this.type, this.keyword, this.page, this.pageSize});
+  EventAPI._({required this.type, this.keyword, this.page, this.pageSize});
 
-  ArticleAPI.fetchHeadline(int page, int pageSize)
-      : this._(type: ArticleType.fetchHeadline, page: page, pageSize: pageSize);
-  ArticleAPI.fetchNews(String keyword, int page, int pageSize)
+  EventAPI.fetchHeadline(int page, int pageSize)
+      : this._(type: EventType.fetchHeadline, page: page, pageSize: pageSize);
+  EventAPI.fetchNews(String keyword, int page, int pageSize)
       : this._(
-            type: ArticleType.fetchNews,
+            type: EventType.fetchNews,
             keyword: keyword,
             page: page,
             pageSize: pageSize);
@@ -26,9 +26,9 @@ class ArticleAPI implements APIRequestRepresentable {
 
   String get path {
     switch (type) {
-      case ArticleType.fetchHeadline:
+      case EventType.fetchHeadline:
         return "/top-headlines";
-      case ArticleType.fetchNews:
+      case EventType.fetchNews:
         return "/top-headlines";
     }
   }
@@ -43,9 +43,9 @@ class ArticleAPI implements APIRequestRepresentable {
 
   Map<String, String> get query {
     switch (type) {
-      case ArticleType.fetchHeadline:
+      case EventType.fetchHeadline:
         return {"country": "us", "page": "$page", "pageSize": "$pageSize"};
-      case ArticleType.fetchNews:
+      case EventType.fetchNews:
         return {"page": "$page", "pageSize": "$pageSize", "q": keyword ?? ""};
     }
   }
