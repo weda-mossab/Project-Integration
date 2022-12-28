@@ -37,7 +37,7 @@ export class AuthService {
     return this.keycloakService.getUserRoles()
   }
   
-  public redirectToAdmin():KeycloakProfile| undefined{
+  public getProfile():KeycloakProfile| undefined{
     return this.keycloakService.getKeycloakInstance().profile
 
   }
