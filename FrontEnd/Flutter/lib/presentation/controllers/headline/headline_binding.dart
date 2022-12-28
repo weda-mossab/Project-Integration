@@ -6,7 +6,7 @@ import 'package:event_app/presentation/controllers/headline/headline_controller.
 class HeadlineBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(() => FetchHeadlineUseCase(Get.find<ArticleRepositoryIml>()));
+    Get.lazyPut(() => FetchHeadlineUseCase(Get.find<EventRepositoryIml>()));
     Get.lazyPut(() => HeadlineController(Get.find()));
   }
 }

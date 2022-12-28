@@ -4,7 +4,7 @@ import 'package:event_app/domain/repositories/event_repository.dart';
 import 'package:tuple/tuple.dart';
 
 class FetchHeadlineUseCase extends ParamUseCase<Paging, Tuple2<int, int>> {
-  final ArticleRepository _repo;
+  final EventRepository _repo;
   FetchHeadlineUseCase(this._repo);
 
   @override

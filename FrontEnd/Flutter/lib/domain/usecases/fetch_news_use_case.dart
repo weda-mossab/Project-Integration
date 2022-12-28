@@ -4,7 +4,7 @@ import 'package:event_app/domain/repositories/event_repository.dart';
 import 'package:tuple/tuple.dart';
 
 class FetchNewsUseCase extends ParamUseCase<Paging, Tuple3<String, int, int>> {
-  final ArticleRepository _repo;
+  final EventRepository _repo;
   FetchNewsUseCase(this._repo);
 
   @override
