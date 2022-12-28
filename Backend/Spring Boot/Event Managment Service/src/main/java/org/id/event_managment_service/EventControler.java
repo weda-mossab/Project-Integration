@@ -1,11 +1,13 @@
 package org.id.event_managment_service;
 
+import java.util.Collection;
 import java.util.List;
 
 import javax.annotation.security.RolesAllowed;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -29,18 +31,21 @@ public class EventControler {
     @Autowired
     EventService eventService;
 
+    
+    
     @GetMapping
     public List<Event> getEvents(){
+      System.out.println(SecurityContextHolder.getContext().getAuthentication().getAuthorities());
     return eventService.findAll();
     }
 
-
+/* 
  
   @GetMapping(value="/{id}")
     public Event getEvents(@PathVariable String id){
     return eventService.findbyId(id);
     }
- 
+ */
 
 
     @PostMapping(value="/save")
