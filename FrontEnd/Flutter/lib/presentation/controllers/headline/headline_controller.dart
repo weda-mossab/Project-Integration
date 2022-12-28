@@ -12,12 +12,12 @@ class HeadlineController extends GetxController {
   var _isLoadMore = false;
   var _paging = Rx<Paging?>(null);
 
-  var articles = RxList<Event>([]);
+  var evenements = RxList<Event>([]);
 
   fetchData() async {
     final newPaging =
         await _fetchHeadlineUseCase.execute(Tuple2(_currentPage, _pageSize));
-    articles.assignAll(newPaging.events);
+    evenements.assignAll(newPaging.events);
     _paging.value = newPaging;
   }
 
@@ -29,7 +29,7 @@ class HeadlineController extends GetxController {
     _currentPage += 1;
     final newPaging =
         await _fetchHeadlineUseCase.execute(Tuple2(_currentPage, _pageSize));
-    articles.addAll(newPaging.events);
+    evenements.addAll(newPaging.events);
     _paging.value?.totalResults = newPaging.totalResults;
     _isLoadMore = false;
   }

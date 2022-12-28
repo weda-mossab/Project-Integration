@@ -27,9 +27,9 @@ class HeadlinePage extends GetView<HeadlineController> {
           ),
           child: ListView.builder(
             controller: _scrollController,
-            itemCount: controller.articles.length,
+            itemCount: controller.evenements.length,
             itemBuilder: (context, index) {
-              final article = controller.articles[index];
+              final article = controller.evenements[index];
               return GestureDetector(
                 onTap: () {
                   Get.to(() => DetailPage(article: article));
