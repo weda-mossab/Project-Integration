@@ -29,12 +29,12 @@ class HeadlinePage extends GetView<HeadlineController> {
             controller: _scrollController,
             itemCount: controller.evenements.length,
             itemBuilder: (context, index) {
-              final article = controller.evenements[index];
+              final evenement = controller.evenements[index];
               return GestureDetector(
                 onTap: () {
-                  Get.to(() => DetailPage(event: article));
+                  Get.to(() => DetailPage(event: evenement));
                 },
-                child: EventCell(evenmt: article),
+                child: EventCell(evenmt: evenement),
               );
             },
           ),
