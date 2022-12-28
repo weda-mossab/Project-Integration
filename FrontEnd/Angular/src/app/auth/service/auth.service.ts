@@ -18,8 +18,9 @@ export class AuthService {
       return undefined;
     }
   }
-  // invoked by await isLoggedIn()
+  // invoked by "await isLoggedIn()""
   public isLoggedIn(): Promise<boolean>{
+  
     return this.keycloakService.isLoggedIn();
   }
 
