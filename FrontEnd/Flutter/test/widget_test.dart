@@ -12,7 +12,7 @@ import 'package:event_app/domain/usecases/signup_use_case.dart';
 
 import 'package:tuple/tuple.dart';
 
-import 'repositories/mock_article_repository.dart';
+import 'repositories/mock_event_repository.dart';
 import 'repositories/mock_auth_repository.dart';
 
 void main() {
@@ -32,7 +32,7 @@ void main() {
     final currentPage = 1;
 
     //Mock data
-    final fetchHeadlineUseCase = FetchHeadlineUseCase(MockArticleRepository());
+    final fetchHeadlineUseCase = FetchHeadlineUseCase(MockEventRepository());
     final paging =
         await fetchHeadlineUseCase.execute(Tuple2(currentPage, pageSize));
 
@@ -47,7 +47,7 @@ void main() {
     final currentPage = 1;
 
     //Mock data
-    final fetchHeadlineUseCase = FetchNewsUseCase(MockArticleRepository());
+    final fetchHeadlineUseCase = FetchNewsUseCase(MockEventRepository());
     final paging = await fetchHeadlineUseCase
         .execute(Tuple3(keyword, currentPage, pageSize));
 

@@ -3,7 +3,7 @@ import 'package:event_app/data/models/paging_model.dart';
 import 'package:event_app/domain/repositories/event_repository.dart';
 import 'dart:convert';
 
-class MockArticleRepository extends EventRepository {
+class MockEventRepository extends EventRepository {
   @override
   Future<PagingModel> fetchHeadline(int page, int pageSize) async {
     final file = File('test/data/headline_sample.json');

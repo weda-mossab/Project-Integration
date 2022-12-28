@@ -22,7 +22,7 @@ class EventAPI implements APIRequestRepresentable {
             pageSize: pageSize);
 
   @override
-  String get endpoint => APIEndpoint.newsapi;
+  String get endpoint => APIEndpoint.eventapi;
 
   String get path {
     switch (type) {
