@@ -16,7 +16,7 @@ const routes: Routes = [
     path:'',
 
     loadChildren:()=>import('./views/user/home/home.module').then(m=>m.HomeModule),
-    
+    data:{role:["user,admin"]},
   },
   {
     path:'loginuser',
