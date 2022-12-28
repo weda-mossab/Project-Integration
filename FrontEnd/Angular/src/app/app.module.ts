@@ -17,7 +17,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     AddEventComponent,
     UpdateEventComponent,
     AdminProfileComponent,
-    // SearchBarComponent
+
 
   ],
   imports: [
