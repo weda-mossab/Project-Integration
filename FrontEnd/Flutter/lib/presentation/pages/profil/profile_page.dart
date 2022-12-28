@@ -43,11 +43,15 @@ class ProfilePage extends StatelessWidget {
                             padding: const EdgeInsets.only(left: 10, top: 100),
                             child: Align(
                               alignment: Alignment.topCenter,
-                              child: Text(
-                                'Welcome',
-                                style: TextStyle(
-                                  color: Color.fromARGB(255, 12, 12, 12),
-                                  fontSize: 15,
+                              child: TextButton(
+                                onPressed: () {
+                                  //send you to login page
+                                },
+                                child: Text(
+                                  'Press To Logout',
+                                  style: TextStyle(
+                                    color: Color.fromARGB(255, 15, 109, 185),
+                                  ),
                                 ),
                               ),
                             ),
