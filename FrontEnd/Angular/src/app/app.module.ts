@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AdminProfileComponent } from './views/admin/admin-profile/admin-profile.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { AuthModule } from './auth/auth.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,10 +28,11 @@ import { NgxPaginationModule } from 'ngx-pagination';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    AuthModule
 
   ],
-  // providers: [NgForm],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

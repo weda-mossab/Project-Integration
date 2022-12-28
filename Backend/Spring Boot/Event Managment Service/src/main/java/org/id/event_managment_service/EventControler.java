@@ -2,7 +2,7 @@ package org.id.event_managment_service;
 
 import java.util.List;
 
-
+import javax.annotation.security.RolesAllowed;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -27,16 +28,20 @@ import org.springframework.web.bind.annotation.RestController;
 public class EventControler {
     @Autowired
     EventService eventService;
-    
+
     @GetMapping
     public List<Event> getEvents(){
     return eventService.findAll();
     }
 
-    @GetMapping(value="/{id}")
+
+ 
+  @GetMapping(value="/{id}")
     public Event getEvents(@PathVariable String id){
     return eventService.findbyId(id);
     }
+ 
+
 
     @PostMapping(value="/save")
     public Event saveEvent(@RequestBody @Valid Event event, BindingResult result){

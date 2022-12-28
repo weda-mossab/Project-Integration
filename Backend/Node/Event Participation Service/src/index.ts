@@ -15,7 +15,7 @@ const app: Express = express();
 const port = 3000;
 //read json
 app.use(express.json());
-//app.use(keycloak.middleware());
+app.use(keycloak.middleware());
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -27,9 +27,10 @@ mongoose.connect(uri,(err)=>{
 });
 
 
-app.get('/', /*keycloak.protect() ,*/ async (req: any, res: Response) => {
+app.get('/', keycloak.protect() , async (req: any, res: Response) => {
 
-  await  Participation.find()
+ res.send(200)
+  
 
 });
 
@@ -46,6 +47,8 @@ app.post("/participation",(req:Request,res:Response)=>{
 
 new  */
 
-app.listen(port, () => {
-  console.log(`⚡️[server]: Server is running at https://localhost:${port}`);
-});
+  app.listen(port, () => {
+    console.log(`⚡️[server]: Server is running at https://localhost:${port}`);
+  });
+
+
