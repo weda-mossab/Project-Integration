@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { KeycloakService } from 'keycloak-angular';
-import { KeycloakTokenParsed } from 'keycloak-js';
+import { KeycloakProfile, KeycloakTokenParsed } from 'keycloak-js';
 
 @Injectable({
   providedIn: 'root'
@@ -37,6 +37,8 @@ export class AuthService {
     return this.keycloakService.getUserRoles()
   }
   
-  public redirectToAdmin():void{
+  public redirectToAdmin():KeycloakProfile| undefined{
+    return this.keycloakService.getKeycloakInstance().profile
+
   }
 }
