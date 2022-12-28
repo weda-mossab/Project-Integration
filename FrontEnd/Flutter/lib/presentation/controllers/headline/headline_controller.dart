@@ -17,7 +17,7 @@ class HeadlineController extends GetxController {
   fetchData() async {
     final newPaging =
         await _fetchHeadlineUseCase.execute(Tuple2(_currentPage, _pageSize));
-    articles.assignAll(newPaging.articles);
+    articles.assignAll(newPaging.events);
     _paging.value = newPaging;
   }
 
@@ -29,7 +29,7 @@ class HeadlineController extends GetxController {
     _currentPage += 1;
     final newPaging =
         await _fetchHeadlineUseCase.execute(Tuple2(_currentPage, _pageSize));
-    articles.addAll(newPaging.articles);
+    articles.addAll(newPaging.events);
     _paging.value?.totalResults = newPaging.totalResults;
     _isLoadMore = false;
   }

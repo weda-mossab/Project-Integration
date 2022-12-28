@@ -37,7 +37,7 @@ void main() {
         await fetchHeadlineUseCase.execute(Tuple2(currentPage, pageSize));
 
     // Verify that data has created.
-    expect(paging.articles.length, 20);
+    expect(paging.events.length, 20);
   });
 
   test('Fetch news test', () async {
@@ -52,6 +52,6 @@ void main() {
         .execute(Tuple3(keyword, currentPage, pageSize));
 
     // Verify that data has created.
-    expect(paging.articles.length, 3);
+    expect(paging.events.length, 3);
   });
 }

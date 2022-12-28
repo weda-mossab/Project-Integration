@@ -3,9 +3,9 @@ import 'package:event_app/domain/entities/event.dart';
 class Paging {
   Paging({
     required this.totalResults,
-    required this.articles,
+    required this.events,
   });
 
   int totalResults;
-  List<Event> articles;
+  List<Event> events;
 }

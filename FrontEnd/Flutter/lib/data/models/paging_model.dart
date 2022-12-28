@@ -5,7 +5,7 @@ class PagingModel extends Paging {
   PagingModel({
     required this.totalResults,
     required this.events,
-  }) : super(articles: events, totalResults: totalResults);
+  }) : super(events: events, totalResults: totalResults);
 
   final int totalResults;
   final List<EventModel> events;
