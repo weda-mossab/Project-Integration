@@ -30,6 +30,6 @@ class EventModel extends Event {
   String? content;
 
   factory EventModel.fromJson(Map<String, dynamic> json) =>
-      _$ArticleModelFromJson(json);
-  Map<String, dynamic> toJson() => _$ArticleModelToJson(this);
+      _$EventModelFromJson(json);
+  Map<String, dynamic> toJson() => _$EventModelToJson(this);
 }
