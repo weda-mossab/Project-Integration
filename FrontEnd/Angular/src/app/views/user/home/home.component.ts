@@ -8,8 +8,8 @@ import {AuthService} from 'src/app/auth/service/auth.service';
 })
 export class HomeComponent {
 
-  constructor(private authService: AuthService ) {}
-  ngOnInit(): void {
-      this.authService.login()
-      }
+  constructor(private authService: AuthService ) {
+    authService.login()
+  }
+
 }

@@ -10,9 +10,6 @@ export class UserLayoutComponent   {
 
   constructor(private authService: AuthService ) {}
 
-  ngOnInit(): void {
-    this.authService.redirectToProfile()
-     }
 
 
 }
