@@ -10,10 +10,10 @@
         <h5 data-aos-delay="400">ISET Events is a plateform that allows any student to discover every event will happen in his ow institut and all the details  about it by receive notifications and facilitating the paticipation process </h5>
         <div>
           <!-- *ngIf="login()" -->
-          <div  class="text-center text-lg-start" >
+          <div *ngIf="!logedIn"  class="text-center text-lg-start" >
 
-            <a  ngIf = (click)="this.authService.login()" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
-              <span>Get Started</span>
+            <a  (click)="this.authService.login()" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+              <span>Log In</span>
               <i class="bi bi-arrow-right"></i>
             </a>
           </div>
