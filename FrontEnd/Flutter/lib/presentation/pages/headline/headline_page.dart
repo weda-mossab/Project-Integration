@@ -32,7 +32,7 @@ class HeadlinePage extends GetView<HeadlineController> {
               final article = controller.evenements[index];
               return GestureDetector(
                 onTap: () {
-                  Get.to(() => DetailPage(article: article));
+                  Get.to(() => DetailPage(event: article));
                 },
                 child: EventCell(article: article),
               );

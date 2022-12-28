@@ -7,9 +7,9 @@ import 'package:event_app/app/config/app_text_styles.dart';
 import 'package:event_app/domain/entities/event.dart';
 
 class DetailPage extends StatelessWidget {
-  final Event article;
+  final Event event;
 
-  DetailPage({required this.article});
+  DetailPage({required this.event});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class DetailPage extends StatelessWidget {
           child: Column(
             children: [
               Text(
-                article.title ?? "",
+                event.title ?? "",
                 style: AppTextStyles.title,
                 maxLines: null,
               ),
@@ -47,14 +47,14 @@ class DetailPage extends StatelessWidget {
                   errorWidget: (context, url, error) => Container(
                     color: Colors.grey,
                   ),
-                  imageUrl: article.urlToImage ?? "",
+                  imageUrl: event.urlToImage ?? "",
                 ),
               ),
               SizedBox(
                 height: 10,
               ),
               Text(
-                article.content ?? "",
+                event.content ?? "",
                 style: AppTextStyles.body,
               ),
               Text(""),
