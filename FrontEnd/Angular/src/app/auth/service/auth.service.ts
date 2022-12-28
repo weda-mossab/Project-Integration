@@ -39,6 +39,5 @@ export class AuthService {
   
   public getProfile():KeycloakProfile| undefined{
     return this.keycloakService.getKeycloakInstance().profile
-
   }
 }
