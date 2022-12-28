@@ -12,5 +12,4 @@ export class HomeComponent {
   ngOnInit(): void {
       this.authService.login()
       }
-
 }
