@@ -18,8 +18,6 @@ import { AuthModule } from './auth/auth.module';
     AddEventComponent,
     UpdateEventComponent,
     AdminProfileComponent,
-
-
   ],
   imports: [
     BrowserModule,

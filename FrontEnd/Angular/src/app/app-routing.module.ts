@@ -38,7 +38,13 @@ const routes: Routes = [
      loadChildren:()=>import("./views/user/user-profile/user-profile.module").then(m=>m.UserProfileModule),
      canActivate:[AuthGuard],
      data:{roles:["user"]}
-   }
+   },
+   {
+    path:"forget-password",
+    loadChildren:()=>import("./views/user/forget-password/forget-password.module").then(m=>m.ForgetPasswordModule),
+    canActivate:[AuthGuard],
+    data:{roles:["user"]}
+  }
  ]},
 
  {

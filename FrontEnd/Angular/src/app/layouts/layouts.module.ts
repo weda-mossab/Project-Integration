@@ -27,5 +27,4 @@ import {AuthService} from 'src/app/auth/service/auth.service';
 export class LayoutsModule {
   constructor(private authService: AuthService ) {}
 
-
 }
