@@ -24,20 +24,17 @@ const routes: Routes = [
   {
     path:'list-event',
     loadChildren:()=>import('./views/user/list-event/list-event.module').then(m=>m.ListEventModule),
-    data:{role:["user,admin"]},
-    canActivate:[AuthGuard]
+  
   },
   {
     path:'show-event',
     loadChildren:()=>import('./views/user/show-event/show-event.module').then(m=>m.ShowEventModule),
-    data:{role:["user,admin"]},
-    canActivate:[AuthGuard]
+
   },
   {
     path:"user-profile",
     loadChildren:()=>import("./views/user/user-profile/user-profile.module").then(m=>m.UserProfileModule),
-    canActivate:[AuthGuard],
-    data:{roles:["user"]}
+
   }
 ]
 },
