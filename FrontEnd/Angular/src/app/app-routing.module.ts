@@ -13,7 +13,6 @@ const routes: Routes = [
      path:'',
      loadChildren:()=>import('./views/user/home/home.module').then(m=>m.HomeModule),
     },
-    {
   {
     path:'',
     loadChildren:()=>import('./views/user/home/home.module').then(m=>m.HomeModule),
@@ -40,7 +39,8 @@ const routes: Routes = [
     canActivate:[AuthGuard],
     data:{roles:["user"]}
   }
-]},
+]
+},
 
 {
   path:'admin',component:AdminLayoutComponent,children:[
