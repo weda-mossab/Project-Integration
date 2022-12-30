@@ -6,11 +6,24 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import Participation from "./event_participation";
 import participation from './event_participation';
+import { User } from './User';
 
 
 function getUserName(req:any):String|undefined{
 return req.kauth.grant.access_token.content.preferred_username
 }
+
+
+function getUserProfile(req:any):User|undefined{
+  let u : User = new User();
+  req.kauth.grant.access_token.content
+  u.email= req.kauth.grant.access_token.content.email;
+  u.name= req.kauth.grant.access_token.content.name;
+  u.preferred_username= req.kauth.grant.access_token.content.preferred_username;
+
+  return u;
+  }
+  
 
 const keycloak = require('../src/keycloakConfig.js').initKeycloak();
 const app: Express = express();
@@ -28,19 +41,30 @@ mongoose.connect(uri,(err)=>{
 });
 
 
-app.post('/', keycloak.protect() , async (req: any, res: Response) => {
- res.send(200)
-});
 
 
-app.get("/",keycloak.protect("user") ,async (req:any,res:Response)=>{
+app.get("/",/*keycloak.protect("user") ,*/async (req:any,res:Response)=>{
 let  result = participation.aggregate([ 
 {$set:{Notparticipated:{$not :"$participents."+getUserName(req)}}},
 {$project: {_id:1, name:1, description:1,Notparticipated:1}}
 ])
 res.send(await result)
-  
 });
+
+
+app.post("/", keycloak.protect('user'),async (req:any,res:Response)=>{
+ let p =await participation.findById(req.body._id)
+  if(p?.participents.get(getUserName(req)) == undefined){
+    p?.participents.set(getUserName(req),getUserProfile(req))
+  await  participation.create(p)
+  } else{
+    p?.participents.delete(getUserName(req))
+  await    participation.create(p)
+  }
+
+  res.send(p)
+
+})
 
 
 
