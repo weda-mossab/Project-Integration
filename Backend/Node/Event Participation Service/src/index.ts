@@ -58,8 +58,21 @@ res.send(await result)
 });
 
 
-app.post("/", keycloak.protect("user"),async (req:any,res:Response)=>{
- let p =await participation.findById(req.body._id)
+
+
+app.get("/:id",keycloak.protect("user") ,async (req:any,res:Response)=>{
+  let  result = participation.aggregate([ 
+  {$match:{_id:req.params.id}},
+  {$set:{Notparticipated:{$not :"$participents."+getUserName(req)}}},
+  {$project: {_id:1, name:1,avatar:1 ,date:1 , description:1,Notparticipated:1}}
+  ])
+  let r = await result
+  res.send(r[0])
+  });
+  
+
+app.post("/:id", keycloak.protect("user"),async (req:any,res:Response)=>{
+ let p =await participation.findById(req.params.id)
   if(p?.participents.get(getUserName(req)) == undefined){
     p?.participents.set(getUserName(req),getUserProfile(req))
   await  participation.create(p)
