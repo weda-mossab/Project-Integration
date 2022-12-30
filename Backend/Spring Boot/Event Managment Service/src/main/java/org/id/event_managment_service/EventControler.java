@@ -1,9 +1,9 @@
 package org.id.event_managment_service;
 
-import java.util.Collection;
+
 import java.util.List;
 
-import javax.annotation.security.RolesAllowed;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,13 +16,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestHeader;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 
-// @CrossOrigin("*")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin("*")
+//@CrossOrigin(origins = "http://localhost:4200")
 
 @RestController
 @RequestMapping(value = "/api")
@@ -39,13 +39,12 @@ public class EventControler {
     return eventService.findAll();
     }
 
-/* 
  
-  @GetMapping(value="/{id}")
+    @GetMapping(value="/{id}")
     public Event getEvents(@PathVariable String id){
     return eventService.findbyId(id);
     }
- */
+
 
 
     @PostMapping(value="/save")
