@@ -10,7 +10,7 @@ let _keycloak;
 var keycloakConfig = {
     clientId: 'event-participation-service',
     bearerOnly: true,
-    serverUrl: `http://localhost:${process.env.KeyClockPort}/auth`,
+    serverUrl: `http://localhost:${process.env.KeyClockPort}`,
     realm: 'Events',
     realmPublicKey: process.env.realmPublicKey,
     credentials: {
