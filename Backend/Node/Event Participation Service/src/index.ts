@@ -53,7 +53,7 @@ mongoose.connect(uri,(err)=>{
 
 
 
-app.get("/",keycloak.protect("user") ,async (req:any,res:Response)=>{
+app.get("/",keycloak.protect() ,async (req:any,res:Response)=>{
 let  result = participation.aggregate([ 
 {$set:{Notparticipated:{$not :"$participents."+getUserName(req)}}},
 {$project: {_id:1, name:1,avatar:1 ,date:1 , description:1,Notparticipated:1}}
