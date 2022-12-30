@@ -1,6 +1,8 @@
+import { HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { KeycloakService } from 'keycloak-angular';
 import { KeycloakProfile, KeycloakTokenParsed } from 'keycloak-js';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -20,8 +22,11 @@ export class AuthService {
   }
   // invoked by "await isLoggedIn()""
   public isLoggedIn(): Promise<boolean>{
-
     return this.keycloakService.isLoggedIn();
+  }
+
+  public  getToken(): String| undefined{
+   return  this.keycloakService.getKeycloakInstance().token
   }
 
   public login():void {
