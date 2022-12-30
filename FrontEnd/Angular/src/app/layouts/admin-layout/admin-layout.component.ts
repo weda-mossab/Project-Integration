@@ -11,6 +11,6 @@ export class AdminLayoutComponent {
 
   constructor(public authService: AuthService ) {}
   
-    redirectToProfile =  this.authService.redirectToProfile();
+ 
 
 }
