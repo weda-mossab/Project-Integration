@@ -10,7 +10,6 @@
       <ul>
         <li><a class="nav-link scrollto active" routerLink="/">Home</a></li>
         <li><a class="nav-link scrollto" routerLink="/list-event">Events</a></li>
-        <li><a class="nav-link scrollto" href="#team">Team</a></li>
         <li><a class="nav-link scrollto" href="https://mail.google.com/mail/u/0/?fs=1&to=Admin@ISETBZ.com&tf=cm">Contact</a></li>
         <li><a *ngIf="!logedIn"  class="getstarted scrollto" href="#about">Register Now</a></li>
         <li>
@@ -18,8 +17,12 @@
             <a *ngIf="logedIn"  class="getstarted scrollto" href="#about"><i class="bi bi-person-circle user"></i> &nbsp; {{this.profile?.username}} &nbsp;&nbsp; <i class="bi bi-caret-down-fill"></i> </a>
            <div class="dropdown-content">
                <a  (click)="this.authService.redirectToProfile()"> <i class="bi bi-gear-fill"></i>&nbsp; Settings</a>
-            
+               <a   routerLink="/admin"> <i class="bi bi-gear-fill"></i>&nbsp; Admin DashBord</a>
             </div>
+
+
+           
+      
           </div>
          </li>
       </ul>

@@ -39,6 +39,7 @@ export class AuthService {
   public redirectToProfile():void{
     this.keycloakService.getKeycloakInstance().accountManagement()
   }
+  
 
   public getRoles():String[]{
     return this.keycloakService.getUserRoles()

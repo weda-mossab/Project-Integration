@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { EventService } from 'src/app/services/event.service';
+
 import { Event } from 'src/app/services/Event';
+import { EventService_Student } from 'src/app/services/event.service_student';
+import { Event_student } from 'src/app/services/Event_student';
 
 @Component({
   selector: 'app-list-event',
@@ -8,14 +10,16 @@ import { Event } from 'src/app/services/Event';
   styleUrls: ['./list-event.component.css']
 })
 export class ListEventComponent {
-  Events: Event[] = [];
-  constructor(private eventService: EventService ) {}
+  Events: Event_student[] = [];
+  constructor(private eventService_Student: EventService_Student ) {}
 
   ngOnInit(): void {
-      this.eventService.getEvents().subscribe(data => {
-        this.Events=data;
+
+      this.eventService_Student.getEvents().subscribe(data => {
+        this.Events=data
       })
 
     }
+
 
 }

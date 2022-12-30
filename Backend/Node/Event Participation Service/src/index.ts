@@ -29,16 +29,26 @@ const keycloak = require('../src/keycloakConfig.js').initKeycloak();
 const app: Express = express();
 const port = 3000;
 app.use(express.json());
-app.use(keycloak.middleware());
-
 app.use(cors());
 app.use(bodyParser.json());
+
+app.options("/", (req:Request,res:Response)=>{
+  res.send("ok")
+  });
+
+
+
+  
+app.use(keycloak.middleware());
+
+
 
 const uri:string="mongodb://127.0.0.1:27017/Project";
 mongoose.connect(uri,(err)=>{
     if(err){ console.log(err); }
     else{ console.log("Mongo db connection sucess");}
 });
+
 
 
 
@@ -52,7 +62,7 @@ res.send(await result)
 });
 
 
-app.post("/", keycloak.protect('user'),async (req:any,res:Response)=>{
+app.post("/", keycloak.protect("user"),async (req:any,res:Response)=>{
  let p =await participation.findById(req.body._id)
   if(p?.participents.get(getUserName(req)) == undefined){
     p?.participents.set(getUserName(req),getUserProfile(req))
@@ -61,11 +71,11 @@ app.post("/", keycloak.protect('user'),async (req:any,res:Response)=>{
     p?.participents.delete(getUserName(req))
   await    participation.create(p)
   }
-
   res.send(p)
-
 })
 
+
+ 
 
 
   app.listen(port, () => {
