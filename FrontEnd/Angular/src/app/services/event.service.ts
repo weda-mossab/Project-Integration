@@ -48,7 +48,8 @@ export class EventService  {
   
 
   getEvents(): Observable<Event[]> {
-    return this.http.get<Event[]>(this.eventsUrl,{headers:this.headers}).pipe(catchError(this.handleError<Event[]>('getEvents', [])));
+
+    return this.http.get<Event[]>(this.eventsUrl,{headers:this.headers});
   }
 
   createEvent(Event: object): Observable<object> {

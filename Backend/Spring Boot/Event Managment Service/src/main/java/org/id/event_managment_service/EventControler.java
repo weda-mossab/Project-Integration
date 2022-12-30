@@ -35,7 +35,7 @@ public class EventControler {
     
     @GetMapping
     public List<Event> getEvents(){
-    System.out.println(SecurityContextHolder.getContext().getAuthentication().getCredentials());
+    System.out.println(SecurityContextHolder.getContext().getAuthentication());
     return eventService.findAll();
     }
 

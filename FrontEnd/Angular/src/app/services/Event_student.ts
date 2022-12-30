@@ -1,10 +1,11 @@
 import { Student } from "./Student";
 
-export interface Event {
+export interface Event_student {
   id: string;
   name: string;
   date: string;
   avatar: string;
   description: string;
-  participents: Map<String,Student>;
+  Notparticipated:Boolean;
+
 }
