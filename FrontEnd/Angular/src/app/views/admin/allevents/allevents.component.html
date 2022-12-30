@@ -46,13 +46,9 @@
                       <h5 class="font-medium"> {{event.name}}</h5>
                       <span class="mb-3 d-block"> {{event.description}} </span>
                       <div class="comment-footer d-md-flex align-items-center">
-                           <!-- <a RouterLink="/admin/update-event" class="btn btn-success">Update</a> -->
-                           <a
-                           [routerLink]="['/admin/update-event/',event.id]"
-                           class="btn btn-success  d-none d-md-block pull-right ms-3 hidden-xs hidden-sm waves-effect waves-light text-white">Update </a>
-                           <!-- <button class="btn btn-danger" style="margin: 4px;">Delete</button> -->
-                           <button routerLink="#"
-                           class="btn btn-danger  d-none d-md-block pull-right ms-3 hidden-xs hidden-sm waves-effect waves-light text-white" (click)="deleteEvent(event.id)" >Delete </button>
+              
+                           <a [routerLink]="['/admin/update-event/',event.id]"  class="btn btn-success  d-none d-md-block pull-right ms-3 hidden-xs hidden-sm waves-effect waves-light text-white">Update </a>
+                           <button routerLink="#"class="btn btn-danger  d-none d-md-block pull-right ms-3 hidden-xs hidden-sm waves-effect waves-light text-white" (click)="deleteEvent(event.id)" >Delete </button>
                           <div class="text-muted fs-2 ms-auto mt-2 mt-md-0">{{event.date}}</div>
                       </div>
                   </div>
