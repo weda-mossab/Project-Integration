@@ -35,10 +35,6 @@ app.use(bodyParser.json());
 app.options("/", (req:Request,res:Response)=>{
   res.send("ok")
   });
-
-
-
-  
 app.use(keycloak.middleware());
 
 
