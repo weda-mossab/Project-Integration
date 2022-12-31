@@ -11,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class UpdateEventComponent {
   constructor(private eventService: EventService ,private route: ActivatedRoute) {}
    id: string ="";
+   sub: any;
 
     ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
@@ -18,7 +19,7 @@ export class UpdateEventComponent {
     });
   }
 
-   sub: any;
+   
   eventupdateform=new FormGroup({
     name:new FormControl('' , [Validators.required , Validators.minLength(5) ] ),
     date:new FormControl('',[Validators.required,Validators.email]),
