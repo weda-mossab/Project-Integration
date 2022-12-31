@@ -15,7 +15,7 @@
           <img src={{event.avatar}} alt="">
           <h3>{{event.name}}</h3>
           <p>{{event.description}}</p>
-          <a routerLink="/show-event" class="read-more"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
+          <a [routerLink]="['/show-event',event._id]"  routerLink="" class="read-more"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
         </div>
       </div>
 

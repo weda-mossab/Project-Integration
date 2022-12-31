@@ -28,11 +28,8 @@ export class EventService_Student  {
 
 
   getEvent(id : String): Observable<Event_student> {
-    return this.http.get<Event_student>(this.eventsUrl+"/"+id,{headers:this.headers});
+    return this.http.get<Event_student>(this.eventsUrl+id,{headers:this.headers});
   }
-
-  
-
 
   registerStudent(id: string): Observable<Object> {
     return this.http.post(`${this.eventsUrl}/` + id, {headers:this.headers});

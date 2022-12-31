@@ -11,17 +11,15 @@ import { ActivatedRoute } from '@angular/router';
 export class ListEventComponent {
   Events: Event_student[] = [];
   constructor(private eventService_Student: EventService_Student ,private route: ActivatedRoute) {}
-  id: string ="";
 
   ngOnInit(): void {
 
       this.eventService_Student.getEvents().subscribe(data => {
         this.Events=data
+        console.log(this.Events)
       })
 
-      this.sub = this.route.params.subscribe(params => {
-        this.id = params['id'];
-     });
+ 
     }
-    sub: any;
+
   }

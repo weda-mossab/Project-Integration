@@ -28,7 +28,7 @@ const routes: Routes = [
     canActivate:[AuthGuard]
    },
    {
-    path:'show-event',
+    path:'show-event/:id',
     loadChildren:()=>import('./views/user/show-event/show-event.module').then(m=>m.ShowEventModule),
     data:{role:["user,admin"]},
     canActivate:[AuthGuard]
