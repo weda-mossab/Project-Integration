@@ -15,13 +15,12 @@ export class ShowEventComponent {
 
     ngOnInit(): void {
     this.sub = this.route.params.subscribe(params => {
-      
+
       this.eventService_Student.getEvent(params['id']).subscribe(data=>{
         this.Event=data;
 
       })
    });
-
 
   }
 

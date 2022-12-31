@@ -4,7 +4,6 @@
   <div class="container" >
 
     <header class="section-header">
-
       <p>Events list </p>
     </header>
 
@@ -12,18 +11,13 @@
 
       <div class="col-lg-4 col-md-6"  *ngFor="let event of Events ">
         <div class="service-box blue">
-          <img src={{event.avatar}} alt="">
+          <img src={{event.avatar}} alt="" width="200px"> <br><br>
           <h3>{{event.name}}</h3>
-          <p>{{event.description}}</p>
+          <p class="text-justify ">{{event.description}}</p>
           <a [routerLink]="['/show-event',event._id]"  routerLink="" class="read-more"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
         </div>
       </div>
-
-
-
-
     </div>
-
   </div>
 
 </section><!-- End Services Section -->

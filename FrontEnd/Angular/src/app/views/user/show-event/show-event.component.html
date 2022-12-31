@@ -6,32 +6,58 @@
       <p>Event Details</p>
     </header>
 
-    <div class="row gy-4" >
-
-      <div class="col-lg-3 col-md-6" style="width: 20%;">
-        <div class="box">
-          <h3 style="color: #07d5c0;">Free Plan</h3>
-          <div class="price">0<sup> DT</sup></div>
-          <img src="assets/img/pricing-free.png" class="img-fluid" alt="">
-          <ul>
-            <li>Workshop php</li>
+    <!-- <div class="row content" >
+      <div class="d-flex HeaderBoxDtailsPath align-items-center flex-row justify-content-center" style="width:80% ;">
+        <div class="col-lg-6">
+          <h4 style="color: #000000;">{{this.Event.name}}</h4>
+          <div class="ShortDescBox">{{this.Event.description}}</div>
+          <div class="IconsHeaderBoxDtailsPath">{{this.Event.date}}</div>
+          <div class="LinkyouNeed d-flex justify-content-start">
+            <a href="" class="buttonWithoutBackground LinkNeedYou d-flex align-items-center btn-buy">Participate</a>
+          </div>
+          <!-- <div class="price"></div> -->
+          <!-- <ul>
+            <li></li>
+            <li> </li>
           </ul>
-          <a href="#" class="btn-buy">Participate</a>
+        </div>
+        <div class="col-lg-5 offset-md-1 pt-4 pt-lg-0">
+          <div class="borderRaduisApp">
+            <img src={{this.Event.avatar}} class="img-fluid borderRaduisApp" alt="">
+          </div>
         </div>
       </div>
+    </div> -->
 
-      <div class="col-lg-3 col-md-12" style="width:80% ;">
-        <div class="box">
-          <h3 style="color: #ff0071;">Event</h3>
-          <!-- <div class="price"></div> -->
-          <img src="./assets/user/img/pricing-ultimate.png" class="img-fluid" alt="">
-          <ul>
-            <li>{{this.Event.description}}</li>
-            <li>{{this.Event.date}} </li>
-          </ul>
+    <div class="d-flex HeaderBoxDtailsPath align-items-center flex-row justify-content-center box" style="width: 70%;" >
+      <div class="col-md-auto col-xs-18" style="width:80% ;">
+        <div class="">
+          <h2 class="title">{{this.Event.name}}</h2>
+          <div class="DescBox">
+            <p class="describ">{{this.Event.description}}</p>
+          </div>
+          <div class="details">
+            <div class="DescBox place">
+              <i class="bi bi-geo-alt icon"></i> &nbsp;
+              <span class="text"> ISET Bizerte </span>
+            </div>
+            <div class="DescBox date">
+                <i class="bi bi-calendar-event icon"></i> &nbsp;
+                <span class="text"> {{this.Event.date}} </span>
+            </div><br>
+          </div>
+          <div class="LinkyouNeed d-flex justify-content-start">
+            <a href="" class=" btn-buy">Participate</a>
+        </div>
+        </div>
+      </div>
+      <div class="imgResponsiveNoMargin  pt-12 pt-md-0">
+        <div class="borderRaduisApp">
+            <img src={{this.Event.avatar}} class="img-fluid   " alt="" width="300px">
         </div>
       </div>
     </div>
+
   </div>
 
 </section><!-- End Pricing Section -->

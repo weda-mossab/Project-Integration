@@ -1,0 +1,53 @@
+.title{
+  font-weight: bold;
+  color: black;
+  text-align: left;
+}
+.text-left
+{
+  text-align: left;
+  font-weight: bold;
+}
+.text{
+  text-align: left;
+  font-size: 14px;
+
+}
+.icon{
+  color: #0012b0;
+ margin-left: -250px;
+ font-weight: bold;
+}
+.date{
+justify-content: left;
+margin-left: -39%;
+}
+.place{
+  justify-content: left;
+margin-left: -57%;
+}
+.describ{
+  text-align: left;
+  font-size: 15px;
+  columns: 30em;
+}
+.btn-buy{
+  font-weight: bold;
+  font-family: "Nunito", sans-serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 4px;
+  border: 2px solid;
+  transition: .5s;
+  margin: 10px;
+  text-decoration: none;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+.details{
+margin-left: 10%;}
+
