@@ -11,7 +11,7 @@ import { Event_student } from 'src/app/services/Event_student';
 export class ShowEventComponent {
   constructor(private eventService_Student: EventService_Student ,private route: ActivatedRoute) {}
   id: string ="";
-  Event : Event_student | undefined = undefined ;
+  Event !: Event_student  ;
 
     ngOnInit(): void {
     this.sub = this.route.params.subscribe(params => {
