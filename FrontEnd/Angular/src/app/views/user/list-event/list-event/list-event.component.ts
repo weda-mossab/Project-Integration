@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-
-import { Event } from 'src/app/services/Event';
 import { EventService_Student } from 'src/app/services/event.service_student';
 import { Event_student } from 'src/app/services/Event_student';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-list-event',
@@ -11,7 +10,8 @@ import { Event_student } from 'src/app/services/Event_student';
 })
 export class ListEventComponent {
   Events: Event_student[] = [];
-  constructor(private eventService_Student: EventService_Student ) {}
+  constructor(private eventService_Student: EventService_Student ,private route: ActivatedRoute) {}
+  id: string ="";
 
   ngOnInit(): void {
 
@@ -19,7 +19,9 @@ export class ListEventComponent {
         this.Events=data
       })
 
+      this.sub = this.route.params.subscribe(params => {
+        this.id = params['id'];
+     });
     }
-
-
-}
+    sub: any;
+  }
