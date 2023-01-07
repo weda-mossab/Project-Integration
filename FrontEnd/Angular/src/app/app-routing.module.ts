@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { UserLayoutComponent } from './layouts/user-layout/user-layout.component';
 import { AuthGuard } from './auth/auth.guard';
+import { AdminSignUpComponent } from './views/admin/admin-sign-up/admin-sign-up.component';
+import { StatisticComponent } from './views/admin/statistic/statistic.component';
 
 const routes: Routes = [
 {
@@ -10,8 +12,11 @@ const routes: Routes = [
   data:{role:[""]},
   canActivate:[AuthGuard],
 
-  component:UserLayoutComponent,children:[
 
+
+  component:UserLayoutComponent,children:[
+    { path:'sign-up',component:AdminSignUpComponent}
+    ,
    {
      path:'',
      loadChildren:()=>import('./views/user/home/home.module').then(m=>m.HomeModule),
@@ -49,6 +54,13 @@ const routes: Routes = [
 
  {
    path:'admin',component:AdminLayoutComponent,children:[
+
+    { path:'sign-up',
+      loadChildren:()=>import('./views/admin/admin-sign-up/admin-sign-up.module').then(m=>m.AdminSignUpModule)
+    },
+    { path:'statistic',
+      loadChildren:()=>import('./views/admin/statistic/statistic.module').then(m=>m.StatisticModule)
+    },
     {
     path:'',
     loadChildren:()=>import('./views/admin/dashboard/dashboard/dashboard.module').then(m=>m.DashboardModule)
