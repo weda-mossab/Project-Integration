@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { UserLayoutComponent } from './layouts/user-layout/user-layout.component';
 import { AuthGuard } from './auth/auth.guard';
-import { AdminSignUpComponent } from './views/admin/admin-sign-up/admin-sign-up.component';
+
 import { StatisticComponent } from './views/admin/statistic/statistic.component';
 
 const routes: Routes = [
@@ -15,12 +15,14 @@ const routes: Routes = [
 
 
   component:UserLayoutComponent,children:[
-    { path:'sign-up',component:AdminSignUpComponent}
-    ,
+
    {
      path:'',
      loadChildren:()=>import('./views/user/home/home.module').then(m=>m.HomeModule),
 
+   },
+   { path:'sign-up',
+   loadChildren:()=>import('./views/user/sign-up/sign-up.module').then(m=>m.SignUpModule)
    },
    {
     path:'loginuser',
@@ -55,9 +57,7 @@ const routes: Routes = [
  {
    path:'admin',component:AdminLayoutComponent,children:[
 
-    { path:'sign-up',
-      loadChildren:()=>import('./views/admin/admin-sign-up/admin-sign-up.module').then(m=>m.AdminSignUpModule)
-    },
+
     { path:'statistic',
       loadChildren:()=>import('./views/admin/statistic/statistic.module').then(m=>m.StatisticModule)
     },
