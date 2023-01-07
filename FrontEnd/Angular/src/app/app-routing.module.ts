@@ -54,6 +54,9 @@ const routes: Routes = [
   }
  ]},
 
+
+
+
  {
    path:'admin',component:AdminLayoutComponent,children:[
 
