@@ -32,7 +32,7 @@ export class EventService_Student  {
   }
 
   registerStudent(id: string): Observable<Object> {
-    return this.http.post(`${this.eventsUrl}/` + id, {headers:this.headers});
+    return this.http.post(`${this.eventsUrl}` + id, {headers:this.headers});
   }
 
 

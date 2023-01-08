@@ -1,8 +1,12 @@
 package org.id.event_managment_service;
 
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
-
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 import javax.validation.Valid;
 
@@ -45,6 +49,14 @@ public class EventControler {
     return eventService.findbyId(id);
     }
 
+     
+    @GetMapping(value="/users/{id}")
+    public Collection<User> getStudents(@PathVariable String id){
+
+    HashMap<String, User> map =eventService.findbyId(id).getParticipents();
+    return  map.values().stream().collect(Collectors.toCollection(ArrayList::new));
+
+    }
 
 
     @PostMapping(value="/save")

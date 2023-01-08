@@ -9,7 +9,7 @@ import { Event_student } from 'src/app/services/Event_student';
   styleUrls: ['./show-event.component.css']
 })
 export class ShowEventComponent {
-  constructor(private eventService_Student: EventService_Student ,private route: ActivatedRoute) {}
+  constructor(public eventService_Student: EventService_Student ,private route: ActivatedRoute) {}
   id: string ="";
   Event !: Event_student  ;
 
@@ -23,6 +23,13 @@ export class ShowEventComponent {
    });
 
   }
+ public registerStudent(){
+    this.eventService_Student.registerStudent(this.Event._id).subscribe(()=>{
+      console.log("done")
+    })
+    this.Event.Notparticipated=!this.Event.Notparticipated
+  }
+  
 
   sub: any;
 
