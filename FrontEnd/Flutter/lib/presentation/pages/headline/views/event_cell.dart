@@ -47,11 +47,6 @@ class EventCell extends StatelessWidget {
                 ),
                 Spacer(),
                 Text(
-                  evenmt.author ?? "",
-                  maxLines: 1,
-                  style: AppTextStyles.body,
-                ),
-                Text(
                   Jiffy(evenmt.publishedAt).yMMMMd,
                   maxLines: 1,
                   style: AppTextStyles.body,
