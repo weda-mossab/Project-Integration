@@ -5,7 +5,6 @@ part 'event_model.g.dart';
 @JsonSerializable()
 class EventModel extends Event {
   EventModel({
-    this.author,
     this.title,
     this.description,
     this.url,
@@ -13,7 +12,6 @@ class EventModel extends Event {
     this.publishedAt,
     this.content,
   }) : super(
-            author: author,
             title: title,
             description: description,
             url: url,
@@ -21,7 +19,6 @@ class EventModel extends Event {
             publishedAt: publishedAt,
             content: content);
 
-  String? author;
   String? title;
   String? description;
   String? url;

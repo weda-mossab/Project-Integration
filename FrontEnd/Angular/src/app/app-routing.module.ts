@@ -4,11 +4,15 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { UserLayoutComponent } from './layouts/user-layout/user-layout.component';
 import { AuthGuard } from './auth/auth.guard';
 
+import { StatisticComponent } from './views/admin/statistic/statistic.component';
+
 const routes: Routes = [
 {
   path:'',
   data:{role:[""]},
   canActivate:[AuthGuard],
+
+
 
   component:UserLayoutComponent,children:[
 
@@ -16,6 +20,9 @@ const routes: Routes = [
      path:'',
      loadChildren:()=>import('./views/user/home/home.module').then(m=>m.HomeModule),
 
+   },
+   { path:'sign-up',
+   loadChildren:()=>import('./views/user/sign-up/sign-up.module').then(m=>m.SignUpModule)
    },
    {
     path:'loginuser',
@@ -47,8 +54,16 @@ const routes: Routes = [
   }
  ]},
 
+
+
+
  {
    path:'admin',component:AdminLayoutComponent,children:[
+
+
+    { path:'statistic',
+      loadChildren:()=>import('./views/admin/statistic/statistic.module').then(m=>m.StatisticModule)
+    },
     {
     path:'',
     loadChildren:()=>import('./views/admin/dashboard/dashboard/dashboard.module').then(m=>m.DashboardModule)

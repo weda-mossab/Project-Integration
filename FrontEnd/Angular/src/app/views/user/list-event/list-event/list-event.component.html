@@ -11,7 +11,7 @@
 
       <div class="col-lg-4 col-md-6"  *ngFor="let event of Events ">
         <div class="service-box blue">
-          <img src={{event.avatar}} alt="" width="200px"> <br><br>
+          <img src={{event.avatar}} alt="" width="50%"> <br><br>
           <h3>{{event.name}}</h3>
           <p class="text-justify ">{{event.description}}</p>
           <a [routerLink]="['/show-event',event._id]"  routerLink="" class="read-more"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
