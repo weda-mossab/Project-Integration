@@ -53,8 +53,8 @@ export class EventService  {
     return this.http.get<Event[]>(this.eventsUrl,{headers:this.headers});
   }
 
-  createEvent(Event: object): Observable<object> {
-    return this.http.post(`${this.eventsUrl}`+'save', Event, {headers:this.headers});
+  createEvent(Event: object): Observable<Event> {
+    return this.http.post<Event>(`${this.eventsUrl}`+'save', Event, {headers:this.headers});
   }
 
   deleteEvent(id: string): Observable<any> {
@@ -75,6 +75,13 @@ export class EventService  {
     return this.http.put(`${this.eventsUrl}update/` + id, value, {headers:this.headers});
   }
 
+
+
+  upload(file:any,id:String):Observable<any> {
+   const formData = new FormData();
+    formData.append("file", file, file.name);
+    return this.http.post(`${this.eventsUrl}uplode/`+id, formData)
+    }
 
 
 /*

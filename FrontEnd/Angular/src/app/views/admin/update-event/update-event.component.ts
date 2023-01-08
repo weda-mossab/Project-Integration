@@ -12,6 +12,7 @@ export class UpdateEventComponent {
   constructor(private eventService: EventService ,private route: ActivatedRoute) {}
    id: string ="";
    sub: any;
+    private file?: File ; 
 
     ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
@@ -27,15 +28,27 @@ export class UpdateEventComponent {
   });
 
   updateEvent(){
-    this.eventService.updateStudent(this.id,this.eventupdateform.value).subscribe({
+    this.eventService.createEvent(this.eventupdateform.value).subscribe({
       next:(data)=>{
-    alert("Event   added successfully")
+        this.eventService.upload(this.file,data.id).subscribe({
+          next:()=>{
+            alert("image uploded")
+          }
+        })
+       alert("Event added successfully")
         this.eventupdateform.reset();
       }, error:err => {
     console.log(err);
       }
     })
   }
+
+   onChange(event:any) {
+    
+            this.file = event.target.files[0];
+        }
+      
+  
 
 
 
