@@ -1,6 +1,5 @@
 class Event {
   Event({
-    this.author,
     this.title,
     this.description,
     this.url,
@@ -9,7 +8,6 @@ class Event {
     this.content,
   });
 
-  String? author;
   String? title;
   String? description;
   String? url;

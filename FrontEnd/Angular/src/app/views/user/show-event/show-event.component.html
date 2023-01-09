@@ -46,8 +46,11 @@
                 <span class="text"> {{this.Event.date}} </span>
             </div><br>
           </div>
-          <div class="LinkyouNeed d-flex justify-content-start">
-            <a href="" class=" btn-buy">Unparticipate</a>
+          
+          <div *ngIf="!this.Event.Notparticipated" class="LinkyouNeed d-flex justify-content-start"> <button (click)="registerStudent()" class=" btn-buy">UnParticipate</button>
+        </div>
+                  
+        <div *ngIf="this.Event.Notparticipated"  class="LinkyouNeed d-flex justify-content-start"><button (click)="registerStudent()" class=" btn-buy"   > Participate</button>
         </div>
         </div>
       </div>

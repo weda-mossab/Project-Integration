@@ -8,7 +8,6 @@ part of 'event_model.dart';
 
 EventModel _$EventModelFromJson(Map<String, dynamic> json) {
   return EventModel(
-    author: json['author'] as String?,
     title: json['title'] as String?,
     description: json['description'] as String?,
     url: json['url'] as String?,
@@ -22,7 +21,6 @@ EventModel _$EventModelFromJson(Map<String, dynamic> json) {
 
 Map<String, dynamic> _$EventModelToJson(EventModel instance) =>
     <String, dynamic>{
-      'author': instance.author,
       'title': instance.title,
       'description': instance.description,
       'url': instance.url,

@@ -12,7 +12,7 @@ import { Token } from '@angular/compiler';
 @Injectable({
   providedIn: 'root'
 })
-export class EventService_Student  {
+export class EventService_Student  { 
   private eventsUrl = "http://localhost:3000/";  // URL to web api
   headers = new HttpHeaders({
     'Authorization':`Bearer ${this.authService.getToken()}`
@@ -32,7 +32,7 @@ export class EventService_Student  {
   }
 
   registerStudent(id: string): Observable<Object> {
-    return this.http.post(`${this.eventsUrl}/` + id, {headers:this.headers});
+    return this.http.post(`${this.eventsUrl}` + id, {headers:this.headers});
   }
 
 

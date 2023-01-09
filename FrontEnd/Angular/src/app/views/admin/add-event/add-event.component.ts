@@ -13,7 +13,7 @@ export class AddEventComponent implements OnInit {
 
   constructor(private eventService: EventService) {}
 
-
+   private file?: File ; 
   ngOnInit(): void {
   
   }
@@ -28,16 +28,25 @@ export class AddEventComponent implements OnInit {
   saveEvent(){
     this.eventService.createEvent(this.eventsaveform.value).subscribe({
       next:(data)=>{
-    alert("Event   added successfully")
+        this.eventService.upload(this.file,data.id).subscribe({
+          next:()=>{
+            alert("image uploded")
+          }
+        })
+       alert("Event added successfully")
         this.eventsaveform.reset();
       }, error:err => {
     console.log(err);
       }
     })
-
-
-
   }
+  
+   onChange(event:any) {
+    
+            this.file = event.target.files[0];
+        }
+      
+  
   // eventsaveform=new FormGroup({
   //   student_name:new FormControl('' , [Validators.required , Validators.minLength(5) ] ),
   //   student_email:new FormControl('',[Validators.required,Validators.email]),

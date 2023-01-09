@@ -69,7 +69,7 @@ const routes: Routes = [
     loadChildren:()=>import('./views/admin/dashboard/dashboard/dashboard.module').then(m=>m.DashboardModule)
    },
     {
-    path:'dashboard',
+    path:'dashboard/:id',
     loadChildren:()=>import('./views/admin/dashboard/dashboard/dashboard.module').then(m=>m.DashboardModule)
    },
    {

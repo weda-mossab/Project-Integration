@@ -6,6 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 import { PageEvent } from '../model/event.model';
 import { AuthService } from '../auth/service/auth.service';
+import { Student } from './Student';
 
 
 @Injectable({
@@ -52,26 +53,35 @@ export class EventService  {
     return this.http.get<Event[]>(this.eventsUrl,{headers:this.headers});
   }
 
-  createEvent(Event: object): Observable<object> {
-    return this.http.post(`${this.eventsUrl}`+'save', Event, {headers:this.headers});
+  createEvent(Event: object): Observable<Event> {
+    return this.http.post<Event>(`${this.eventsUrl}`+'save', Event, {headers:this.headers});
   }
 
   deleteEvent(id: string): Observable<any> {
     return this.http.delete(`${this.eventsUrl}`+'delete/'+id, {headers:this.headers});
   }
 
-  getEvent(id: string): Observable<Object> {
-    return this.http.get(`${this.eventsUrl}/${id}`, {headers:this.headers});
+  getEvent(id: string): Observable<Event> {
+    return this.http.get<Event>(`${this.eventsUrl}${id}`, {headers:this.headers});
   }
 
+
+
+  
+  getParticipta(id: string): Observable<Student[]> {
+    return this.http.get<Student[]>(`${this.eventsUrl}users/${id}`, {headers:this.headers});
+  }
   updateStudent(id: string, value: any): Observable<Object> {
     return this.http.put(`${this.eventsUrl}update/` + id, value, {headers:this.headers});
   }
 
-  getCurrentEvent(id : string){
-    return this.http.get(`${this.eventsUrl}/${id}`, {headers:this.headers});
 
-  }
+
+  upload(file:any,id:String):Observable<any> {
+   const formData = new FormData();
+    formData.append("file", file, file.name);
+    return this.http.post(`${this.eventsUrl}uplode/`+id, formData)
+    }
 
 
 /*
