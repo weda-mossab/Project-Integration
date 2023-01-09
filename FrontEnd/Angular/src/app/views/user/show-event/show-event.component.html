@@ -46,17 +46,19 @@
                 <span class="text"> {{this.Event.date}} </span>
             </div><br>
           </div>
-          
+
           <div *ngIf="!this.Event.Notparticipated" class="LinkyouNeed d-flex justify-content-start"> <button (click)="registerStudent()" class=" btn-buy">UnParticipate</button>
         </div>
-                  
+
         <div *ngIf="this.Event.Notparticipated"  class="LinkyouNeed d-flex justify-content-start"><button (click)="registerStudent()" class=" btn-buy"   > Participate</button>
         </div>
         </div>
       </div>
       <div class="imgResponsiveNoMargin  pt-12 pt-md-0">
         <div class="borderRaduisApp">
-            <img src={{this.Event.avatar}} class="img-fluid   " alt="" width="300px">
+
+          <img [src]="sanitizeImageUrl(this.Event.avatar)" class="img-fluid   " alt="" width="300px" />
+
         </div>
       </div>
     </div>

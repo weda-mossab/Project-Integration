@@ -62,7 +62,7 @@ res.send(await result)
 
 app.get("/:id",keycloak.protect("user") ,async (req:any,res:Response)=>{
   let  result = participation.aggregate([ 
-  {$match:{_id:req.params.id}},
+    { $match: { $expr : { $eq: [ '$_id' , { $toObjectId: req.params.id } ] } } },
   {$set:{Notparticipated:{$not :"$participents."+getUserName(req)}}},
   {$project: {_id:1, name:1,avatar:1 ,date:1 , description:1,Notparticipated:1}}
   ])
