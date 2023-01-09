@@ -8,12 +8,12 @@ import 'package:event_app/presentation/app.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-
-  // DependencyCreator.init();
   // WidgetsFlutterBinding.ensureInitialized();
-  // await initServices();
+  // await Firebase.initializeApp();
+
+  DependencyCreator.init();
+  WidgetsFlutterBinding.ensureInitialized();
+  await initServices();
   
   runApp(App());
 }
