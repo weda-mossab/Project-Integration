@@ -4,11 +4,16 @@ import 'package:get/get.dart';
 import 'package:event_app/app/services/local_storage.dart';
 import 'package:event_app/app/util/dependency.dart';
 import 'package:event_app/presentation/app.dart';
+// import 'package:firebase_auth_project/widget_tree.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 void main() async {
-  DependencyCreator.init();
   WidgetsFlutterBinding.ensureInitialized();
-  await initServices();
+  await Firebase.initializeApp();
+
+  // DependencyCreator.init();
+  // WidgetsFlutterBinding.ensureInitialized();
+  // await initServices();
   
   runApp(App());
 }
