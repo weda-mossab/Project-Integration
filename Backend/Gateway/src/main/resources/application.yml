@@ -1,0 +1,9 @@
+spring:
+  cloud:
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "https://localhost:4200/"
+            allowedMethods:
+            - GET

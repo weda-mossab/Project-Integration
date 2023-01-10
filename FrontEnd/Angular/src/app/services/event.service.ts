@@ -22,12 +22,12 @@ export class EventService  {
     'Authorization': `Bearer ${this.authService.getToken()}`
   });
   constructor(private http: HttpClient,private authService : AuthService) {
-   
+
   }
 
 
 
-  
+
 
 
 
@@ -46,7 +46,7 @@ export class EventService  {
     };
   }
 
-  
+
 
   getEvents(): Observable<Event[]> {
 
@@ -67,11 +67,11 @@ export class EventService  {
 
 
 
-  
+
   getParticipta(id: string): Observable<Student[]> {
     return this.http.get<Student[]>(`${this.eventsUrl}users/${id}`, {headers:this.headers});
   }
-  updateStudent(id: string, value: any): Observable<Object> {
+  updateEvent(id: string, value: any): Observable<Object> {
     return this.http.put(`${this.eventsUrl}update/` + id, value, {headers:this.headers});
   }
 

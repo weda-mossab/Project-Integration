@@ -12,15 +12,15 @@ export class UpdateEventComponent {
   constructor(private eventService: EventService ,private route: ActivatedRoute) {}
    id: string ="";
    sub: any;
-    private file?: File ; 
+    private file?: File ;
 
     ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
-       this.id = params['id']; 
+       this.id = params['id'];
     });
   }
 
-   
+
   eventupdateform=new FormGroup({
     name:new FormControl('' , [Validators.required , Validators.minLength(5) ] ),
     date:new FormControl('',[Validators.required,Validators.email]),
@@ -28,9 +28,9 @@ export class UpdateEventComponent {
   });
 
   updateEvent(){
-    this.eventService.createEvent(this.eventupdateform.value).subscribe({
+    this.eventService.updateEvent(this.id,this.eventupdateform.value).subscribe({
       next:(data)=>{
-        this.eventService.upload(this.file,data.id).subscribe({
+        this.eventService.upload(this.file,this.id).subscribe({
           next:()=>{
             alert("image uploded")
           }
@@ -44,11 +44,11 @@ export class UpdateEventComponent {
   }
 
    onChange(event:any) {
-    
+
             this.file = event.target.files[0];
         }
       
-  
+
 
 
 
