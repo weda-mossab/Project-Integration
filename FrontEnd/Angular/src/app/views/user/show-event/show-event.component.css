@@ -11,7 +11,6 @@
 .text{
   text-align: left;
   font-size: 14px;
-
 }
 .icon{
   color: #0012b0;
@@ -20,18 +19,18 @@
 }
 .date{
 justify-content: left;
-margin-left: -39%;
+margin-left: -29%;
 }
 .place{
-  justify-content: left;
-margin-left: -57%;
+justify-content: left;
+margin-left: -47%;
 }
 .describ{
   text-align: left;
   font-size: 15px;
   columns: 30em;
 }
-.btn-buy{
+.btn-buy-unpart{
   font-weight: bold;
   font-family: "Nunito", sans-serif;
   font-size: 16px;
@@ -49,7 +48,29 @@ margin-left: -57%;
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
 }
-.btn-buy:hover{
+.btn-buy-unpart:hover{
+  color: rgb(255, 255, 255);
+}
+
+.btn-buy-part{
+  font-weight: bold;
+  font-family: "Nunito", sans-serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 4px;
+  transition: .5s;
+  margin: 10px;
+  color: #4154f1;
+  background-color: rgb(0, 0, 0);
+  text-decoration: none;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+.btn-buy-part:hover{
   color: rgb(255, 255, 255);
 }
 .details{

@@ -32,20 +32,19 @@
                   <table class="table text-nowrap">
                       <thead>
                           <tr>
-                              <th class="border-top-0">#</th>
+                            <th class="border-top-0">Username</th>
                               <th class="border-top-0">First Name</th>
-                              <th class="border-top-0">Birth Date </th>
-                              <th class="border-top-0">class</th>
-                              <th class="border-top-0">Phone</th>
-                              <th class="border-top-0">Action</th>
+                              <th class="border-top-0">email</th>
                               <!-- <th class="border-top-0">Action</th> -->
                           </tr>
                       </thead>
-                      <tbody *ngFor="let student of Students">
-                          <tr>
-                         
-                          </tr>
-
+                      <tbody>
+                        <tr *ngFor="let student of Students">
+                          <td>{{student.preferred_username}}</td>
+                          <td>{{student.name}}</td>
+                          <td>{{student.email}}</td>
+                        </tr>
+                        <tr>
                       </tbody>
                   </table>
               </div>

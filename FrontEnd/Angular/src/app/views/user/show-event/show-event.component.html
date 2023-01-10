@@ -47,10 +47,10 @@
             </div><br>
           </div>
 
-          <div *ngIf="!this.Event.Notparticipated" class="LinkyouNeed d-flex justify-content-start"> <button (click)="registerStudent()" class=" btn-buy">UnParticipate</button>
+          <div *ngIf="!this.Event.Notparticipated" class="LinkyouNeed d-flex justify-content-start"> <button (click)="registerStudent()" class=" btn-buy-unpart">UnParticipate</button>
         </div>
 
-        <div *ngIf="this.Event.Notparticipated"  class="LinkyouNeed d-flex justify-content-start"><button (click)="registerStudent()" class=" btn-buy"   > Participate</button>
+        <div *ngIf="this.Event.Notparticipated"  class="LinkyouNeed d-flex justify-content-start"><button (click)="registerStudent()" class=" btn-buy-part"   > Participate</button>
         </div>
         </div>
       </div>
