@@ -46,7 +46,7 @@
                       <h5 class="font-medium"> {{event.name}}</h5>
                       <span class="mb-3 d-block"> {{event.description}} </span>
                       <div class="comment-footer d-md-flex align-items-center">
-              
+
                            <a [routerLink]="['/admin/update-event/',event.id]"
                            class="btn btn-success  d-none d-md-block pull-right ms-3 hidden-xs hidden-sm waves-effect waves-light text-white">Update </a>
                            <!-- <button class="btn btn-danger" style="margin: 4px;">Delete</button> -->
@@ -58,14 +58,12 @@
                       </div>
                   </div>
                 </div>
-
-
               </ng-container>
 
               <!-- Comment Row -->
               <div>
                 <pagination-controls
-               
+
                 previousLabel="Prev"
                 nextLabel="Next"
                 (pageChange)="onTableDataChange($event)"

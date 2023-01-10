@@ -24,8 +24,4 @@ import { NgxPaginationModule } from 'ngx-pagination';
 export class AlleventsModule {
 
 
-
-
-
-
  }
