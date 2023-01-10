@@ -6,7 +6,40 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import Participation from "./event_participation";
 import participation from './event_participation';
+import {Eureka} from 'eureka-js-client';
 import { User } from './User';
+
+
+
+// example configuration
+const client = new Eureka({
+  // application instance information
+  instance: {
+    app: 'Node-Js-Service',
+    instanceId: 'Node-Js-Service',
+    hostName: 'localhost',
+    ipAddr: '127.0.0.1',
+    port: {
+      '$': 3000,
+      '@enabled': true,
+    },
+    vipAddress: 'Node-Js-Service',
+    statusPageUrl: 'http://localhost:3000/',
+    dataCenterInfo: {
+    '@class': 'com.netflix.appinfo.InstanceInfo$DefaultDataCenterInfo',
+      name: 'MyOwn',
+    },
+  },
+  eureka: {
+    host: '127.0.0.1',
+    port: 8761,
+    servicePath: '/eureka/apps/'
+  },
+});
+
+
+client.start()
+
 
 
 function getUserName(req:any):String|undefined{
